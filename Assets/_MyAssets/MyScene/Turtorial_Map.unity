@@ -446,23 +446,11 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.2, z: 0}
---- !u!114 &461843417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+--- !u!64 &473125009 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 64610692681685639, guid: 126b2028c8c3c1240a4b754e07fb2632, type: 3}
+  m_PrefabInstance: {fileID: 998718189}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1488029236634123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61eda04c65c1d2b439c223cd3be50f57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 10
-  characterController: {fileID: 461843416}
-  _joystick: {fileID: 1679219747}
-  moveSpeed: 4
-  anim: {fileID: 95291941412855494}
 --- !u!1 &478254561
 GameObject:
   m_ObjectHideFlags: 0
@@ -1503,10 +1491,10 @@ PrefabInstance:
     - target: {fileID: 95268865748115449, guid: 126b2028c8c3c1240a4b754e07fb2632, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: a7554e8af5e88f6419a84a0899380021, type: 2}
+      objectReference: {fileID: 9100000, guid: eec9ae5c9b1c9f945bf0daaeb4a5efeb, type: 2}
     - target: {fileID: 95268865748115449, guid: 126b2028c8c3c1240a4b754e07fb2632, type: 3}
       propertyPath: m_ApplyRootMotion
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 195030740808878981, guid: 126b2028c8c3c1240a4b754e07fb2632, type: 3}
       propertyPath: m_Speed
@@ -2580,11 +2568,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 435910291}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fbbfe74e1e59d9498d703d879aa3323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rpm: 70
+--- !u!114 &2080435394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435910291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6398f4bf9149354c83da1fb87e48658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detector: {fileID: 473125009}
+--- !u!114 &2080435395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435910291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3569e3c832525e94b8b498285a22fda2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nav: {fileID: 2080435390}
   player: {fileID: 4112869379099436}
+  detec: {fileID: 2080435394}
   anim: {fileID: 1616350173}
   A: {fileID: 478254561}
   B: {fileID: 1626305520}
@@ -2846,7 +2861,7 @@ GameObject:
   - component: {fileID: 4112869379099436}
   - component: {fileID: 95291941412855494}
   - component: {fileID: 461843416}
-  - component: {fileID: 461843417}
+  - component: {fileID: 95291941412855495}
   m_Layer: 0
   m_Name: Agent_00_Number7_skin_VIP_01
   m_TagString: Player
@@ -3563,6 +3578,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &95291941412855495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488029236634123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61eda04c65c1d2b439c223cd3be50f57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 10
+  characterController: {fileID: 461843416}
+  _joystick: {fileID: 1679219747}
+  moveSpeed: 4
+  anim: {fileID: 95291941412855494}
 --- !u!137 &137995047894987527
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0

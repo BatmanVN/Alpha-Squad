@@ -7,61 +7,55 @@ public class Enemy_move : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent nav;
     [SerializeField] private Transform player;
-    //[SerializeField] private AudioSource footStep;
-    [SerializeField] private Animator anim;
+    [SerializeField] private Detected_Player detec;
+    //[SerializeField] private Animator anim;
     [SerializeField] private GameObject A;
     [SerializeField] private GameObject B;
     [SerializeField] private float distanceStop;
     private Transform currentPoint;
-    private bool deteced;
+
+    public NavMeshAgent Nav { get => nav; set => nav = value; }
+
     private void Start()
     {
         currentPoint = B.transform;
-        //nav = GetComponent<NavMeshAgent>();
     }
     private void Move()
     {
-        if(currentPoint == A.transform && nav.remainingDistance < 2f)
+        if(currentPoint == A.transform && Nav.remainingDistance < 2f)
         {
             currentPoint = B.transform;
         }
-        else if (currentPoint == B.transform && nav.remainingDistance < 2f)
+        else if (currentPoint == B.transform && Nav.remainingDistance < 2f)
         {
             currentPoint = A.transform;
         }
-        else if(deteced == true)
+        else if(detec.Deteced == true)
         {
             currentPoint = player;
             if(Vector3.Distance(transform.position, player.position) <= distanceStop)
             {
-                nav.isStopped = true;
+                Nav.isStopped = true;
             }
             else
             {
-                nav.isStopped = false;
+                Nav.isStopped = false;
             }
         }
-        RunAnim();
-        nav.SetDestination(currentPoint.position);
+        //RunAnim();
+        Nav.SetDestination(currentPoint.position);
     }
-    private void RunAnim()
-    {
-        if (nav.isStopped == false)
-        {
-            anim.SetBool("Run", true);
-        }
-        else
-        {
-            anim.SetBool("Run", false);
-        }
-    }
-    private void OnTriggerEnter(Collider detector)
-    {
-        if(detector.CompareTag("Player"))
-        {
-            deteced = true;
-        }
-    }
+    //private void RunAnim()
+    //{
+    //    if (Nav.isStopped == false)
+    //    {
+    //        anim.SetBool(runParaname, true);
+    //    }
+    //    else
+    //    {
+    //        anim.SetBool(runParaname, false);
+    //    }
+    //}
     private void Update()
     {
             Move(); 

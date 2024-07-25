@@ -11,7 +11,6 @@ public class Move : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private Animator anim;
 
-    private void OnValidate() => characterController = GetComponent<CharacterController>();
     private void CharacterMove()
     {
         float hInput = _joystick.Horizontal;
