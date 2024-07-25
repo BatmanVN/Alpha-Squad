@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1239524002252149
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4950629248320315}
+  - component: {fileID: 114429849152054559}
+  - component: {fileID: 54464628564109300}
+  - component: {fileID: 114354278230774881}
+  m_Layer: 10
+  m_Name: GrenadeLauncher_Projectile_Miniboss
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4950629248320315
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239524002252149}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!114 &114429849152054559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239524002252149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3685147820f4414f2b8bc5e3faa3e43d, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  afterHit: {fileID: 0}
+  afterHitDelay: 0
+  destroyOnOwnerDie: 0
+  previousAttackTime: 0
+  triggerType: 1
+  explosionTime: 0
+  radius: 3
+  dontDamage: 0
+  indicatorScaleTime: 1
+  extraGravity: 0
+  launchAngleDeg: 65
+  offsetWithSpreadAngle: 1
+  damageType: 3
+  rotationMode: 2
+  rotationVelocity: 10
+  setToKinematicOnCollision: 0
+  assignedVisual: {fileID: 0}
+  explosionIndicator: {fileID: 0}
+  indicatorType: 1
+  explosionIndicatorRange: {fileID: 0}
+  contactPointFX: {fileID: 0}
+  contactPointType: 0
+  contactPointDuration: 2
+  directHitTrigger: 0
+  overrideToReachablePosition: 0
+  grenadeBeepSound: {fileID: 0}
+  lastRotation: {x: 0, y: 0, z: 0, w: 0}
+--- !u!54 &54464628564109300
+Rigidbody:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239524002252149}
+  m_Mass: 0.5
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!114 &114354278230774881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239524002252149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da040cc9c09acd67127f450948f6007, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  prefab: {fileID: 114675839219266163, guid: 160bbad3586d30e42a5cfe55453036c1, type: 2}
+  count: 3
+  randomArea: 3
+  splitFX: {fileID: 1995689460045966, guid: 8308573f5716714439a3f2caa680eb23, type: 2}

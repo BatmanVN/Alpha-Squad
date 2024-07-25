@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1376308454850970
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4417036976516945}
+  - component: {fileID: 114685967672677538}
+  m_Layer: 15
+  m_Name: UltimateToxicPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4417036976516945
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376308454850970}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!114 &114685967672677538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376308454850970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da55b30c69a5fc1e044a498378d72ed0, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  startRange: 3
+  range: 10
+  propagationSpeed: 2
+  duration: 5
+  triggerInterval: 0.5
+  slowStart: 35
+  slowFinish: 75
+  slowDuration: 0.5
+  dmgCPMultiplier: 0.12
+  dotCPMultiplier: 0.01
+  dotInterval: {x: 0, y: 0.8}
+  poolFX: {fileID: 1383600969918043, guid: 74f8187890cad0c4199b49be36388a8d, type: 2}
+  finishFX: {fileID: 1537894939680146, guid: b86c9bb0c6322314a9e304d8bd49a428, type: 2}
+  puddleSound: {fileID: 11400000, guid: 6a7256a03db223c428bc5e4e7d480628, type: 2}
+  puddleExplosionSound: {fileID: 11400000, guid: 6249f07b5cefab949bb73eb6df6d7cf2, type: 2}

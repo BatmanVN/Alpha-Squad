@@ -1,0 +1,35 @@
+Shader "CustomLight/PhongSimplified" {
+	Properties {
+		_MainTex ("Texture", 2D) = "white" {}
+		_Color ("Color", Vector) = (1,1,1,1)
+		_LightColor ("Light Color", Vector) = (1,1,1,1)
+		_SpecColor ("Specular Color", Vector) = (1,1,1,1)
+		_ShadowStrength ("Shadow Strength", Range(0, 1)) = 0
+		_Shininess ("Glossiness", Float) = 1
+		_RimLight ("Rim Light Strength", Range(0, 1)) = 0
+		_RimLightSZ ("Rim Light Size", Range(0, 1)) = 0
+	}
+	//DummyShaderTextExporter
+	SubShader{
+		Tags { "RenderType"="Opaque" }
+		LOD 200
+		CGPROGRAM
+#pragma surface surf Standard
+#pragma target 3.0
+
+		sampler2D _MainTex;
+		fixed4 _Color;
+		struct Input
+		{
+			float2 uv_MainTex;
+		};
+		
+		void surf(Input IN, inout SurfaceOutputStandard o)
+		{
+			fixed4 c = tex2D(_MainTex, IN.uv_MainTex) * _Color;
+			o.Albedo = c.rgb;
+			o.Alpha = c.a;
+		}
+		ENDCG
+	}
+}

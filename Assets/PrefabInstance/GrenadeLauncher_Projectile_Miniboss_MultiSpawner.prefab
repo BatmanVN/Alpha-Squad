@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1598842559842734
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4141881888171943}
+  - component: {fileID: 114390173845125526}
+  m_Layer: 0
+  m_Name: GrenadeLauncher_Projectile_Miniboss_MultiSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4141881888171943
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598842559842734}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!114 &114390173845125526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598842559842734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b415755269e35df1a6e8c0368e25514, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  afterHit: {fileID: 0}
+  afterHitDelay: 0
+  destroyOnOwnerDie: 0
+  previousAttackTime: 0
+  projectile: {fileID: 114171888913413112, guid: 79399aa01d518834db046f670778d528, type: 2}
+  weaponDamageEntity: {fileID: 0}
+  spawnMode: 0
+  count: 8
+  heightOffset: 1.6
+  damageMultiplier: 2
+  spreadAngle: 180
+  sphereAngle: 90
+  minAngle: 0
