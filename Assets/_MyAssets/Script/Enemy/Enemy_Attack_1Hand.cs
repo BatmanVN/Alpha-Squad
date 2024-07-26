@@ -29,21 +29,17 @@ public class Enemy_Attack_1Hand : MonoBehaviour
             _lastAttack = Time.time;
 
         }
-        //if(Time.time - _lastAttack < _interval)
-        //{
-        //    _animEnemy.SetBool("Idle",true);
-        //}
     }
     private void Attack()
     {
         if(_Move.Nav.isStopped == true)
         {
             _animEnemy.SetTrigger(attackParaname);
-            _animEnemy.SetBool("Idle", true);
+            _animEnemy.SetBool(idleParaname, true);
         }
         else
         {
-            _animEnemy.SetBool("Idle", false);
+            _animEnemy.SetBool(idleParaname, false);
         }
     }
     private void Update()
