@@ -5,6 +5,7 @@ using UnityEngine;
 public class Choose_Weapon : MonoBehaviour
 {
     [SerializeField] private GameObject[] buttonChooseGun;
+    [SerializeField] private GameObject[] iconSelected;
     [SerializeField] private Vector2[] obj;
     [SerializeField] private bool[] clicked;
     
@@ -19,6 +20,7 @@ public class Choose_Weapon : MonoBehaviour
                 if (i == index)
                 {
                     buttonChooseGun[i].transform.position = new Vector2(buttonChooseGun[i].transform.position.x, buttonChooseGun[i].transform.position.y + yPostion);
+                    iconSelected[i].SetActive(true);
                     clicked[i] = true;
                 }
             }
@@ -26,6 +28,7 @@ public class Choose_Weapon : MonoBehaviour
             {
                 clicked[i] = false;
                 buttonChooseGun[i].transform.position = obj[i];
+                iconSelected[i].SetActive(false);
             }
         }
     }
