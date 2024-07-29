@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    
+    [SerializeField] private int rpm;
 }
