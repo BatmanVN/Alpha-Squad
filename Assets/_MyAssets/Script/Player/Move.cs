@@ -16,6 +16,7 @@ public class Move : MonoBehaviour
         float hInput = _joystick.Horizontal;
         float xInput = _joystick.Vertical;
         var direction = new Vector3(hInput,characterController.velocity.y,xInput);
+        direction.y = 0;
         characterController.SimpleMove(direction * moveSpeed);
         if(hInput != 0 || xInput != 0)
         {

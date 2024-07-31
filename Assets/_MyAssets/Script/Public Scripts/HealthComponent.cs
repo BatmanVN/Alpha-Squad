@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class HealthComponent : MonoBehaviour
 {
-    private float _maxHealth;
-    private float _health;
+    [SerializeField]private float _maxHealth;
+    [SerializeField]private float _health;
 
     public float MaxHealth { get => _maxHealth; protected set => _maxHealth = value; }
     public float Health { get => _health; protected set => _health = value; }

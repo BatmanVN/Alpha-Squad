@@ -8,8 +8,9 @@ public class Enemy_Attack : MonoBehaviour
     private const string idleParaname = "Idle";
     private Enemy_move _Move;
     private Animator _animEnemy;
-    private float _dame;
-   [SerializeField] private int rpm;
+    [SerializeField] private HealthComponent playerHealth;
+    [SerializeField]private float _dame;
+    [SerializeField] private int rpm;
 
     private float _lastAttack;
     private float _interval;
@@ -21,7 +22,7 @@ public class Enemy_Attack : MonoBehaviour
         _Move = GetComponent<Enemy_move>();
         _animEnemy = GetComponentInChildren<Animator>();
     }
-    private void UpdateFiring()
+    public void UpdateFiring()
     {
         if(Time.time - _lastAttack >= _interval)
         {
@@ -32,18 +33,17 @@ public class Enemy_Attack : MonoBehaviour
     }
     private void Attack()
     {
-        if(_Move.Nav.isStopped == true)
-        {
+            playerHealth.TakeDame(Dame);
             _animEnemy.SetTrigger(attackParaname);
             _animEnemy.SetBool(idleParaname, true);
-        }
-        else
-        {
+    }
+    public void StopAttack()
+    {
+        if(_Move.Nav.isStopped == false)
             _animEnemy.SetBool(idleParaname, false);
-        }
     }
     private void Update()
     {
-        UpdateFiring();
+
     }
 }
