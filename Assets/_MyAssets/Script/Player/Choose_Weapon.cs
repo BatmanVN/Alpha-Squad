@@ -35,43 +35,8 @@ public class Choose_Weapon : MonoBehaviour
             }
         }
     }
-    //private void ShowBackgroundRank()
-    //{
-    //    for (int i = 0; i < showRank.Length; i++)
-    //    {
-    //        WeaponRankType rankType = GetRandomEnumValue<WeaponRankType>();
-    //        switch (rankType)
-    //        {
-    //            case WeaponRankType.Common:
-    //                i = 0;
-    //                break;
-    //            case WeaponRankType.Uncommon:
-    //                i = 1;
-    //                break;
-    //            case WeaponRankType.Rare:
-    //                i = 2;
-    //                break;
-    //            case WeaponRankType.Epic:
-    //                i = 3;
-    //                break;
-    //            case WeaponRankType.Mythic:
-    //                i = 4;
-    //                break;
-    //            case WeaponRankType.Legendary:
-    //                i = 5;
-    //                break;
-    //        }
-    //        showRank[i].sprite = backgroundRank[i];
-    //    }
-    //}
-    //public T GetRandomEnumValue<T>() where T : Enum
-    //{
-    //    Array values = Enum.GetValues(typeof(T));
-    //    return (T)values.GetValue(UnityEngine.Random.Range(0, values.Length));
-    //}
     private void Start()
     {
-        //ShowBackgroundRank();
         buttonChooseGun[0].transform.position = new Vector2(buttonChooseGun[0].transform.position.x, buttonChooseGun[0].transform.position.y + yPostion);
         iconSelected[0].SetActive(true);
         clicked[0] = true;

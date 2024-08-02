@@ -369,6 +369,7 @@ GameObject:
   - component: {fileID: 195030740808878981}
   - component: {fileID: 54806478288307166}
   - component: {fileID: 136011583014214382}
+  - component: {fileID: 5807894842734516364}
   m_Layer: 17
   m_Name: Enemy_01_KnifeSkelly_Halloween
   m_TagString: Untagged
@@ -450,6 +451,27 @@ CapsuleCollider:
   m_Height: 2.04
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!95 &5807894842734516364
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360064594724621}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: ab3ecee1f51c0924aa9bed3173710158, type: 2}
+  m_Controller: {fileID: 9100000, guid: eec9ae5c9b1c9f945bf0daaeb4a5efeb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1363947197672837
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,7 +1125,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4175744882174672}
-  - component: {fileID: 95268865748115449}
   m_Layer: 16
   m_Name: enemy_40_katana_rigg
   m_TagString: Untagged
@@ -1128,27 +1149,6 @@ Transform:
   m_Father: {fileID: 4964471865300562}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &95268865748115449
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1824414841292854}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: ab3ecee1f51c0924aa9bed3173710158, type: 2}
-  m_Controller: {fileID: 22100000, guid: 3da36512cb0167e42b08135873fed03f, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1833301518813245
 GameObject:
   m_ObjectHideFlags: 0

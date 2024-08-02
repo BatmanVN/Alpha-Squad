@@ -15,7 +15,6 @@ public class Detected_Player : MonoBehaviour
         if (detector.CompareTag("Player"))
         {
             Deteced = true;
-            //CheckRotation();
         }
     }
 }
