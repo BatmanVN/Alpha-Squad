@@ -8,31 +8,26 @@ public class Enemy_Attack : MonoBehaviour
     [SerializeField] private Animator _animEnemy;
     [SerializeField] private HealthComponent playerHealth;
     [SerializeField] private float _dame;
-    [SerializeField] private int rpm;
-    private float _lastAttack;
-    private float _interval;
+    //[SerializeField] private int rpm;
+    //private float _lastAttack;
+    //private float _interval;
 
-
-    private void Update()
-    {
-        
-    }
     private void Start()
     {
-        _interval = 60f / rpm;
+        //_interval = 60f / rpm;
         _animEnemy = GetComponent<Animator>();
     }
-    public void UpdateFiring()
-    {
-        if (Time.time - _lastAttack >= _interval)
-        {
-             StartAttack();
-            _lastAttack = Time.time;
-        }
-    }
-    public void StartAttack() => _animEnemy.SetBool(attackParaname,true);
-    public void StopAttack() => _animEnemy.SetBool(attackParaname, false);
-    private void OnAttack()
+    //public void UpdateFiring()
+    //{
+    //    if (Time.time - _lastAttack >= _interval)
+    //    {
+    //         StartAttack();
+    //        _lastAttack = Time.time;
+    //    }
+    //}
+    public void StartAttack() => _animEnemy.SetTrigger(attackParaname);
+    public void StopAttack() => _animEnemy.SetBool("Run", true);
+    public void OnAttack()
     {
         playerHealth.TakeDame(_dame);
     }

@@ -14,7 +14,6 @@ public class Enemy_move : MonoBehaviour
     [SerializeField] private float distanceStop;
     [SerializeField] private UnityEvent destinationReached;
     [SerializeField] private UnityEvent startMoving;
-    private bool first;
     private bool _ismoving;
     public bool Moving 
     { 
@@ -23,7 +22,7 @@ public class Enemy_move : MonoBehaviour
         {
             if (_ismoving == value) return;
             _ismoving = value;
-            OnIsValueChanged();
+            InvokeRepeating(nameof(OnIsValueChanged), 0f, 2f);
         }
     }
     private void Start()
@@ -34,7 +33,7 @@ public class Enemy_move : MonoBehaviour
     {
         nav.isStopped = !_ismoving;
         anim.SetBool(runParaname, _ismoving);
-        if(_ismoving)
+        if(Moving)
         {
             startMoving.Invoke();
         }
