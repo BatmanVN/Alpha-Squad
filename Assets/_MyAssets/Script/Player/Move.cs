@@ -10,7 +10,11 @@ public class Move : MonoBehaviour
     [SerializeField] private VariableJoystick _joystick;
     [SerializeField] private float moveSpeed;
     [SerializeField] private Animator anim;
-
+    [SerializeField] private Transform rangeAnim;
+    [SerializeField] private Transform rangeOfGun;
+    [SerializeField] private Transform enemy;
+    [SerializeField] private float whiteToEnemy;
+    [SerializeField] private float redToEnemy;
     private void CharacterMove()
     {
         float hInput = _joystick.Horizontal;
@@ -18,7 +22,7 @@ public class Move : MonoBehaviour
         var direction = new Vector3(hInput,characterController.velocity.y,xInput);
         direction.y = 0;
         characterController.SimpleMove(direction * moveSpeed);
-        if(hInput != 0 || xInput != 0)
+        if (hInput != 0 || xInput != 0)
         {
             Quaternion targetRotation = Quaternion.LookRotation(characterController.velocity);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
@@ -30,5 +34,6 @@ public class Move : MonoBehaviour
     private void Update()
     {
         CharacterMove();
+
     }
 }

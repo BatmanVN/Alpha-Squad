@@ -5,4 +5,5 @@ using UnityEngine;
 public class WeaponRank : MonoBehaviour
 {
     public WeaponRankType weaponRank;
+
 }

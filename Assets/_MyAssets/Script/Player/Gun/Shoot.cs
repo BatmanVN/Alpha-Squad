@@ -6,5 +6,6 @@ public class Shoot : MonoBehaviour
 {
     public Transform pointBullet;
 
+
 }
 

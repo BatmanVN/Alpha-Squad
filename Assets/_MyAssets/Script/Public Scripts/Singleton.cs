@@ -4,15 +4,14 @@ using UnityEngine;
 public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
     private static T _instance;
-
     public static T Instance
     {
         get
         {
-            if(_instance == null)
+            if (_instance == null)
             {
-                T intanceInscene = FindAnyObjectByType<T>();
-                ResigterIntance(intanceInscene);
+                T instanceInScene = FindAnyObjectByType<T>();
+                RegsisterInstance(instanceInScene);
             }
             return _instance;
         }
@@ -21,17 +20,18 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
         if (_instance == null)
         {
-            ResigterIntance((T)(MonoBehaviour)this);
+            RegsisterInstance((T)(MonoBehaviour)this);
         }
         else if (_instance != this)
         {
             Destroy(this);
         }
     }
-    private static void ResigterIntance(T newIntance)
+
+    private static void RegsisterInstance(T newInStance)
     {
-        if (newIntance == null)
-            _instance = newIntance;
+        if (newInStance == null) return;
+        _instance = newInStance;
         DontDestroyOnLoad(_instance.transform.root.gameObject);
     }
-}
+} 

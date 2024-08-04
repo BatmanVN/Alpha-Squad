@@ -10,12 +10,16 @@ public class Label_ToCamera : MonoBehaviour
 
     private void Start()
     {
-        //mainCamera = CinemachineVirtualCamera.main;
+        GameObject camera = GameObject.FindWithTag("MainCamera");
+        if(camera != null)
+        {
+            mainCamera = camera.GetComponent<CinemachineVirtualCamera>();
+        }
         LookTowardCamera();
     }
     private void Update() => LookTowardCamera();
     private void LookTowardCamera()
     {
-        transform.LookAt(mainCamera.transform);
+        transform.forward = mainCamera.transform.forward;
     }
 }
