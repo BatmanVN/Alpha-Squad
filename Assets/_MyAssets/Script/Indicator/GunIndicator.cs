@@ -8,7 +8,22 @@ public class GunIndicator : MonoBehaviour
     [SerializeField] private Transform enemy;
     private void Update()
     {
+<<<<<<< HEAD
+        for(int i = 0; i < rangGun.Length; i++)
+        {
+            if(indicator.CompareTag(rangGun[0]))
+            {
+                indicators[0].SetActive(true);
+            }
+            else
+            {
+                indicators[i].SetActive(true);
+                indicators[0].SetActive(false);
+            }
+        }
+=======
         
+>>>>>>> c6f9ef13cee997e949eb87bd697753f44b78370f
     }
 
     public void EnableWhiteIndicator()
