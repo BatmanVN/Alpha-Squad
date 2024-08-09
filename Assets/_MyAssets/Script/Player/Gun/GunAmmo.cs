@@ -7,9 +7,12 @@ using UnityEngine.Events;
 public class GunAmmo : MonoBehaviour
 {
     [SerializeField] private float _magsize;
-    //[SerializeField] private Shoot gun;
+    [SerializeField] private Shoot gun;
     [SerializeField] private float _loadAmmo;
-    [SerializeField] private UnityEvent onloadAmmo;
+
+    public UnityEvent onChangeAmmoValue;
+    public UnityEvent onLockShooting;
+    public UnityEvent onUnlockShooting;
 
     private void Start()
     {
@@ -21,27 +24,38 @@ public class GunAmmo : MonoBehaviour
         set
         {
             _loadAmmo = value;
-            onloadAmmo?.Invoke();
+            onChangeAmmoValue?.Invoke();
             if(_loadAmmo <= 0)
             {
-                //LockShooting();
+                LockShooting();
+                
             }
             else
             {
-                //UnlockShooting();
+                UnlockShooting();
             }
         }
     }
 
-    //private void UnlockShooting()
-    //{
-    //    gun.enabled = true;
-    //}
+    public float Magsize { get => _magsize; set => _magsize = value; }
 
-    //private void LockShooting()
-    //{
-    //    gun.enabled = false;
-    //}
+    private void UnlockShooting()
+    {
+        gun.enabled = true;
+        onUnlockShooting?.Invoke();
+    }
 
-    private void RefillAmmo() => LoadAmmo = _magsize;
+    private void LockShooting()
+    {
+        onLockShooting?.Invoke();
+        gun.enabled = false;
+        StartCoroutine(DelayUnlock());
+    }
+    private IEnumerator DelayUnlock()
+    {
+        yield return new WaitForSeconds(gun.TimeDelay);
+        RefillAmmo();
+    }
+    public void ammoChangeValue() => LoadAmmo--;
+    private void RefillAmmo() => LoadAmmo = Magsize;
 }

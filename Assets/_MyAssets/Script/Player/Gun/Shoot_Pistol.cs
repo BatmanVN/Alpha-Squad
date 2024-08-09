@@ -23,6 +23,7 @@ public class Shoot_Pistol : Shoot
         {
             ShootPistol();
             Onshoot();
+            onShoot?.Invoke();
             _lastShot = Time.time;
         }
     }
@@ -31,7 +32,7 @@ public class Shoot_Pistol : Shoot
     {
         GameObject bullet = Instantiate(bulletPrefab, pointBullet.position, pointBullet.rotation);
         Vector3 shootToEnemy = (enemy.position - pointBullet.position).normalized;
-        bullet.GetComponent<Rigidbody>().velocity = shootToEnemy * speedBullet; 
+        bullet.GetComponent<Rigidbody>().velocity = shootToEnemy * speedBullet;
     }
     public void Onshoot() => animShoot.SetTrigger(shootParaname);
     private void Update()

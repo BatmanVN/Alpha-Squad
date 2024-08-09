@@ -5,7 +5,6 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
     public Transform pointBullet;
-
-
+    public float TimeDelay;
 }
 

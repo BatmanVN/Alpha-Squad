@@ -11,12 +11,7 @@ public class Move : MonoBehaviour
     [SerializeField] private VariableJoystick _joystick;
     [SerializeField] private float moveSpeed;
     [SerializeField] private Animator anim;
-    [SerializeField] private Transform enemy;
-    [SerializeField] private float whiteToEnemy;
-    [SerializeField] private float redToEnemy;
-    public UnityEvent onWhiteIndicator;
-    public UnityEvent onRedIndicator;
-    public UnityEvent onShoot;
+    public UnityEvent onAttack;
 
     private void CharacterMove()
     {
@@ -31,36 +26,14 @@ public class Move : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
             anim.SetBool(runParaname, true);
         }
-        else
+        if(hInput == 0 && xInput == 0)
         {
             anim.SetBool(runParaname, false);
-            OnIndicator();
-            onShoot?.Invoke();
+            onAttack?.Invoke();
         }
-    }
-
-    private void OnIndicator()
-    {
-        var indicator = Vector3.Distance(transform.position, enemy.position);
-        if(indicator <= whiteToEnemy && indicator > redToEnemy)
-        {
-            onWhiteIndicator?.Invoke();
-        }
-        else if(indicator <= redToEnemy)
-        {
-            onRedIndicator?.Invoke();
-            anim.SetTrigger("Aiming");
-            transform.LookAt(enemy);
-        }    
     }
     private void Update()
     {
         CharacterMove();
-    }
-    private void OnDrawGizmos()
-    {
-        Color rangeAttack = Color.black;
-        Gizmos.DrawSphere(transform.position, redToEnemy);
-        Gizmos.DrawSphere(transform.position, whiteToEnemy);
     }
 }

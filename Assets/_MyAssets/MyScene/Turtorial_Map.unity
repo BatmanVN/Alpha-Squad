@@ -132,6 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 11905141}
   - component: {fileID: 11905142}
+  - component: {fileID: 11905143}
   m_Layer: 5
   m_Name: ProgressBar
   m_TagString: Untagged
@@ -169,6 +170,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 11905140}
   m_CullTransparentMesh: 0
+--- !u!114 &11905143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11905140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83fe49618bf4d8f4ea6166caa7886d57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammo: {fileID: 517669574}
+  ammoText: {fileID: 159417181}
+  foreGround: {fileID: 1351198110}
 --- !u!1001 &12234332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1855,7 +1871,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 140.91501, y: -21.45}
+  m_AnchoredPosition: {x: 130.41501, y: -21.45}
   m_SizeDelta: {x: 35, y: 42.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &149071581
@@ -2638,8 +2654,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 7
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1001 &226979517
@@ -3894,8 +3917,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 22
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &301838090
@@ -4490,8 +4520,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 3
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &410870118
@@ -5035,8 +5072,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 40
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &438383147
@@ -6042,10 +6086,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 7
+  gun: {fileID: 95291941412855497}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11905143}
+        m_TargetAssemblyTypeName: DisplayAmmo, Assembly-CSharp
+        m_MethodName: DisplayAmmoText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1953228525}
+        m_TargetAssemblyTypeName: StatusRealoading, Assembly-CSharp
+        m_MethodName: DisableRealoadbar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onUnlockShooting:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1953228525}
+        m_TargetAssemblyTypeName: StatusRealoading, Assembly-CSharp
+        m_MethodName: EnableRealoadbar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &520750227
 GameObject:
   m_ObjectHideFlags: 0
@@ -6580,8 +6667,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 3
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &585889653
@@ -6781,8 +6875,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 22
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &602802146
@@ -6975,8 +7076,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 40
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &609320726
@@ -7031,8 +7139,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 3
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &627155432
@@ -7511,8 +7626,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 30
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &683347963
@@ -7862,7 +7984,7 @@ BoxCollider:
   m_GameObject: {fileID: 703406859}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 0, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -8076,7 +8198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4618773725006137, guid: aed440275310d5442b324130653ff4c5, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.90583146
+      value: 0.9058314
       objectReference: {fileID: 0}
     - target: {fileID: 4618773725006137, guid: aed440275310d5442b324130653ff4c5, type: 3}
       propertyPath: m_LocalRotation.x
@@ -8084,11 +8206,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4618773725006137, guid: aed440275310d5442b324130653ff4c5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.020562824
+      value: -0.020562673
       objectReference: {fileID: 0}
     - target: {fileID: 4618773725006137, guid: aed440275310d5442b324130653ff4c5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.008965751
+      value: -0.008965791
       objectReference: {fileID: 0}
     - target: {fileID: 4618773725006137, guid: aed440275310d5442b324130653ff4c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8533,8 +8655,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 18
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &742377313
@@ -8733,8 +8862,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 30
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &770096568
@@ -8867,8 +9003,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 30
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &796381384
@@ -8984,8 +9127,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 8
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &810928727
@@ -9637,8 +9787,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 18
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &850479279
@@ -10411,8 +10568,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 22
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &905905500
@@ -10596,8 +10760,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 4
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &924679942
@@ -10845,8 +11016,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 22
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &939859224
@@ -11049,8 +11227,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 3
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &962283424
@@ -11336,6 +11521,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 4112869379099436}
+    - target: {fileID: 2080435395, guid: 126b2028c8c3c1240a4b754e07fb2632, type: 3}
+      propertyPath: distanceStop
+      value: 2.7
+      objectReference: {fileID: 0}
     - target: {fileID: 1069755161277317, guid: 126b2028c8c3c1240a4b754e07fb2632, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -11616,6 +11805,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 434fca2f6fa769444b359863de61dff2, type: 2}
+    - target: {fileID: 726628024686854452, guid: 126b2028c8c3c1240a4b754e07fb2632, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2916407859203604309, guid: 126b2028c8c3c1240a4b754e07fb2632, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -11826,8 +12019,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 3
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1018250180
@@ -12512,8 +12712,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 3
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1078267431
@@ -12568,8 +12775,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 6
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1082436073
@@ -13178,8 +13392,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 30
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1137467902
@@ -13648,8 +13869,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 22
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1206414328
@@ -13704,8 +13932,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 40
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1213876451
@@ -13902,8 +14137,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 10
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1248681953
@@ -14034,8 +14276,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 40
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1257792042
@@ -14456,8 +14705,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 18
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1308728391
@@ -14529,8 +14785,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 3
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1317842365
@@ -14743,8 +15006,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 30
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1335219874
@@ -14799,8 +15069,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 5
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1337052582
@@ -14992,8 +15269,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 3
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1352778375
@@ -15230,8 +15514,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 4
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1361692300
@@ -15420,8 +15711,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 40
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1368927948
@@ -15538,8 +15836,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 40
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1372800058
@@ -15594,8 +15899,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 7
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1375023181
@@ -15709,8 +16021,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 3
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1390992701
@@ -15791,8 +16110,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 6
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1402544026
@@ -16019,8 +16345,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 10
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1424050082
@@ -16421,8 +16754,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 3
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1471428671
@@ -16477,8 +16817,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 8
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1476326759
@@ -16602,8 +16949,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 1
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1508029876
@@ -16842,8 +17196,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 30
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1541365540
@@ -17050,8 +17411,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 3
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1571453478
@@ -17168,8 +17536,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 18
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1573197390
@@ -17291,8 +17666,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 30
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1591264397
@@ -17408,8 +17790,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 3
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1592098148
@@ -17525,8 +17914,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 7
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1605802227
@@ -17869,8 +18265,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 3
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1614790957
@@ -18063,8 +18466,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 1
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1642340924
@@ -18140,8 +18550,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 18
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1646896743
@@ -18316,8 +18733,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 1
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1670493227
@@ -18393,8 +18817,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 30
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1682052364
@@ -18611,8 +19042,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 3
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1702017226
@@ -18730,8 +19168,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 1
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1702255093
@@ -18848,8 +19293,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 40
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1703541087
@@ -18950,8 +19402,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 7
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &1724393250
@@ -19209,8 +19668,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 8
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1729599811
@@ -19506,8 +19972,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 10
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1772207357
@@ -20075,8 +20548,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 8
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1792582593
@@ -20398,8 +20878,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 7
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1794397173
@@ -21134,7 +21621,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 52.915, y: -21.45}
+  m_AnchoredPosition: {x: 63.415, y: -21.45}
   m_SizeDelta: {x: 25, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1832523929
@@ -21296,8 +21783,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 3
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1837624841
@@ -21352,8 +21846,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 10
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1842416515
@@ -21408,8 +21909,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 7
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1847701758
@@ -21464,8 +21972,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 5
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1848112237
@@ -21520,8 +22035,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 18
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1854005971
@@ -22178,8 +22700,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 6
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1882761702
@@ -22234,8 +22763,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 7
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1883248223
@@ -22406,8 +22942,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 1
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1903396154
@@ -22614,8 +23157,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 40
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1922279602
@@ -22731,8 +23281,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 8
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1926236321
@@ -22854,8 +23411,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 30
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1938676878
@@ -23088,8 +23652,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 6
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1944685328
@@ -23144,8 +23715,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 3
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1947600575
@@ -23223,8 +23801,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 4
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1950662918
@@ -23252,6 +23837,7 @@ GameObject:
   - component: {fileID: 1953228523}
   - component: {fileID: 1953228522}
   - component: {fileID: 1953228521}
+  - component: {fileID: 1953228525}
   m_Layer: 5
   m_Name: Ui_Weapon Tutorial
   m_TagString: Untagged
@@ -23342,6 +23928,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1953228525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953228520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47941df8788be2148bdb3ba1de02152f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  realoadingBar: {fileID: 946757444}
 --- !u!1 &1992318097 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1312723469541667, guid: f9e175af49ae13b4ea4ed0be995824bf, type: 3}
@@ -23381,8 +23980,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 40
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1992318102
@@ -23499,8 +24105,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 5
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1993786430
@@ -23617,8 +24230,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 4
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1999278815
@@ -23673,8 +24293,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 30
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &2016240621
@@ -23929,8 +24556,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 5
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &2017712047
@@ -23985,8 +24619,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 40
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &2019714389
@@ -24102,8 +24743,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 8
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &2031016732
@@ -24220,8 +24868,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 4
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &2034055482
@@ -24516,8 +25171,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 5
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &2073993031
@@ -24556,8 +25218,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 7
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &2080435387 stripped
@@ -24649,8 +25318,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 7
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1001 &2091829347
@@ -24891,8 +25567,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 10
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &2113198713
@@ -25270,8 +25953,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 30
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &2135867177
@@ -25484,8 +26174,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 6
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &2137068414
@@ -25828,6 +26525,7 @@ GameObject:
   - component: {fileID: 95291941412855495}
   - component: {fileID: 95291941412855496}
   - component: {fileID: 95291941412855497}
+  - component: {fileID: 95291941412855498}
   m_Layer: 0
   m_Name: Agent_00_Number7_skin_VIP_01
   m_TagString: Player
@@ -26634,8 +27332,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magsize: 10
+  gun: {fileID: 0}
   _loadAmmo: 0
-  onloadAmmo:
+  onChangeAmmoValue:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockShooting:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnlockShooting:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &54586244929691245
@@ -26703,45 +27408,12 @@ MonoBehaviour:
   _joystick: {fileID: 1679219747}
   moveSpeed: 4
   anim: {fileID: 95291941412855494}
-  enemy: {fileID: 2080435387}
-  whiteToEnemy: 15
-  redToEnemy: 8.5
-  onWhiteIndicator:
+  onAttack:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1642802503}
-        m_TargetAssemblyTypeName: GunIndicator, Assembly-CSharp
-        m_MethodName: EnableWhiteIndicator
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onRedIndicator:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1642802503}
-        m_TargetAssemblyTypeName: GunIndicator, Assembly-CSharp
-        m_MethodName: EnableRedIndicator
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onShoot:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 95291941412855497}
-        m_TargetAssemblyTypeName: Shoot_Pistol, Assembly-CSharp
-        m_MethodName: UpdateFiring
+      - m_Target: {fileID: 95291941412855498}
+        m_TargetAssemblyTypeName: ConditionToShoot, Assembly-CSharp
+        m_MethodName: OnIndicator
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -26793,14 +27465,88 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointBullet: {fileID: 1364446037}
+  TimeDelay: 7
   bulletPrefab: {fileID: 4236135470487450587, guid: 42e84ec822706c34084434b507d93673, type: 3}
   enemy: {fileID: 2080435387}
-  rpm: 20
-  speedBullet: 3
+  rpm: 30
+  speedBullet: 15
   animShoot: {fileID: 95291941412855494}
   onShoot:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 517669574}
+        m_TargetAssemblyTypeName: GunAmmo, Assembly-CSharp
+        m_MethodName: ammoChangeValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &95291941412855498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488029236634123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198390451c4ccce44a59310367fc6175, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 2080435387}
+  whiteToEnemy: 15
+  redToEnemy: 8.5
+  anim: {fileID: 95291941412855494}
+  onWhiteIndicator:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1642802503}
+        m_TargetAssemblyTypeName: GunIndicator, Assembly-CSharp
+        m_MethodName: EnableWhiteIndicator
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onRedIndicator:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1642802503}
+        m_TargetAssemblyTypeName: GunIndicator, Assembly-CSharp
+        m_MethodName: EnableRedIndicator
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onShoot:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 95291941412855497}
+        m_TargetAssemblyTypeName: Shoot_Pistol, Assembly-CSharp
+        m_MethodName: UpdateFiring
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!137 &137995047894987527
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
