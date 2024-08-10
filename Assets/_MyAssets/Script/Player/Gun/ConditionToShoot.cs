@@ -9,7 +9,7 @@ public class ConditionToShoot : MonoBehaviour
     [SerializeField] private float whiteToEnemy;
     [SerializeField] private float redToEnemy;
     [SerializeField] private Animator anim;
-    [SerializeField] private HealthComponent healthEnemy;
+    //[SerializeField] private HealthComponent healthEnemy;
     public UnityEvent onWhiteIndicator;
     public UnityEvent onRedIndicator;
     public UnityEvent onShoot;

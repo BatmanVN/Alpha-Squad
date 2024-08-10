@@ -22,4 +22,8 @@ public class ProgressBar : MonoBehaviour
         float currenWidth = Mathf.Clamp01(progress) * maxWidth;
         mask.sizeDelta = new Vector2(currenWidth, maxHeight);
     }
+    private void Update()
+    {
+        
+    }
 }

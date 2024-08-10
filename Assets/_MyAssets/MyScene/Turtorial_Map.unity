@@ -1155,7 +1155,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &73053955
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6108,7 +6108,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1953228525}
         m_TargetAssemblyTypeName: StatusRealoading, Assembly-CSharp
-        m_MethodName: DisableRealoadbar
+        m_MethodName: EnableRealoadbar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6123,7 +6123,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1953228525}
         m_TargetAssemblyTypeName: StatusRealoading, Assembly-CSharp
-        m_MethodName: EnableRealoadbar
+        m_MethodName: DisableRealoadbar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6133,6 +6133,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &517669576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517669572}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea08375da243a441b88d1e6b0713006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4236135470487450587, guid: 42e84ec822706c34084434b507d93673, type: 3}
+  notification: 3
+  strategy: 0
+  preload: 5
+  capacity: 5
+  recycle: 0
+  persist: 0
+  stamp: 0
+  warnings: 1
+  spawnedClonesList: []
+  despawnedClones: []
+  delays: []
+  deactivatedChild: {fileID: 0}
 --- !u!1 &520750227
 GameObject:
   m_ObjectHideFlags: 0
@@ -27466,11 +27491,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointBullet: {fileID: 1364446037}
   TimeDelay: 7
+  spawnBullet: {fileID: 517669576}
   bulletPrefab: {fileID: 4236135470487450587, guid: 42e84ec822706c34084434b507d93673, type: 3}
   enemy: {fileID: 2080435387}
   rpm: 30
   speedBullet: 15
   animShoot: {fileID: 95291941412855494}
+  currentBullet: 0
   onShoot:
     m_PersistentCalls:
       m_Calls:

@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Play_Button : MonoBehaviour
 {
-    [SerializeField] private ProgressBar progress;
+    //[SerializeField] private ProgressBar progress;
     [SerializeField] private string sceneName;
     [SerializeField] private float fakeDuration;
+    [SerializeField] private Image fillLoading;
     private AsyncOperation loadingOperation;
     private float startTime;
 
@@ -16,7 +18,7 @@ public class Play_Button : MonoBehaviour
     {
         gameObject.SetActive(true);
         DontDestroyOnLoad(this);
-        startTime = Time.unscaledTime;
+        startTime = 0.2f;
         loadingOperation = SceneManager.LoadSceneAsync(sceneName);
         Time.timeScale = 0;
     }
@@ -24,10 +26,11 @@ public class Play_Button : MonoBehaviour
     private void Update()
     {
         if (loadingOperation == null) return;
-        float fakeProgress = (Time.unscaledTime - startTime) / fakeDuration;
-        float finalProgress = Mathf.Min(fakeProgress, loadingOperation.progress);
-        progress.SetProgressValue(finalProgress);
-        if (loadingOperation.isDone && finalProgress >= 1f)
+        startTime += 0.01f;
+        fillLoading.fillAmount = startTime / fakeDuration;
+        //float finalProgress = Mathf.Min(fakeProgress, loadingOperation.progress);
+        //progress.SetProgressValue(finalProgress);
+        if (loadingOperation.isDone && fillLoading.fillAmount == 1f)
         {
             FinshLoading();
         }

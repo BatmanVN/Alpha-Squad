@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Lean.Pool;
 
 public class Shoot_Pistol : Shoot
 {
     private const string shootParaname = "Shoot";
+    [SerializeField] private LeanGameObjectPool spawnBullet;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform enemy;
     [SerializeField] private int rpm;
     [SerializeField] private float speedBullet;
     [SerializeField] private Animator animShoot;
+    [SerializeField] private int currentBullet;
     [SerializeField] private UnityEvent onShoot;
 
     private float _interval;
@@ -31,12 +34,12 @@ public class Shoot_Pistol : Shoot
     private void ShootPistol()
     {
         GameObject bullet = Instantiate(bulletPrefab, pointBullet.position, pointBullet.rotation);
-        Vector3 shootToEnemy = (enemy.position - pointBullet.position).normalized;
-        bullet.GetComponent<Rigidbody>().velocity = shootToEnemy * speedBullet;
+        bullet.transform.position = Vector3.MoveTowards(bullet.transform.position, enemy.transform.position, speedBullet * Time.deltaTime);
     }
     public void Onshoot() => animShoot.SetTrigger(shootParaname);
     private void Update()
     {
         
     }
+    
 }
