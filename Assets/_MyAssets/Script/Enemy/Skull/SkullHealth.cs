@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skull_Manager : HealthComponent
+public class SkullHealth : HealthComponent
 {
     [SerializeField] private float amorIndex;
 

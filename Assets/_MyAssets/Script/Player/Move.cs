@@ -11,6 +11,7 @@ public class Move : MonoBehaviour
     [SerializeField] private VariableJoystick _joystick;
     [SerializeField] private float moveSpeed;
     [SerializeField] private Animator anim;
+    [SerializeField] private Transform enemy;
     public UnityEvent onAttack;
 
     private void CharacterMove()
@@ -28,6 +29,7 @@ public class Move : MonoBehaviour
         }
         if(hInput == 0 && xInput == 0)
         {
+            transform.LookAt(enemy);
             anim.SetBool(runParaname, false);
             onAttack?.Invoke();
         }

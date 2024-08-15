@@ -10,11 +10,11 @@ public class DisPlay_HealthText : MonoBehaviour
     [SerializeField] private Image healthBar;
     private void Start()
     {
-        health.onAttack.AddListener(UpdateHealth);
+        health.onChangedHealth.AddListener(UpdateHealth);
     }
-    public void UpdateHealth(float Health)
+    public void UpdateHealth(float health, float maxHealth)
     {
-        textHealth.text = Health.ToString();
-        healthBar.fillAmount = health.Health / health.MaxHealth;
+        textHealth.text = health.ToString();
+        healthBar.fillAmount = health / maxHealth;
     }
 }

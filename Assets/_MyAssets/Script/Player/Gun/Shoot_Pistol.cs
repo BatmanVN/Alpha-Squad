@@ -15,7 +15,11 @@ public class Shoot_Pistol : Shoot
     [SerializeField] private Animator animShoot;
     [SerializeField] private int currentBullet;
     [SerializeField] private UnityEvent onShoot;
+    [SerializeField] private SkullHealth skullHealth;
+    //[SerializeField] private UnityEvent onTakeDame;
+    [SerializeField] private float dame;
 
+    //private bool onTrigger;
     private float _interval;
     private float _lastShot;
     private void Start() => _interval = 60f / rpm;
@@ -34,7 +38,11 @@ public class Shoot_Pistol : Shoot
     private void ShootPistol()
     {
         GameObject bullet = Instantiate(bulletPrefab, pointBullet.position, pointBullet.rotation);
-        bullet.transform.position = Vector3.MoveTowards(bullet.transform.position, enemy.transform.position, speedBullet * Time.deltaTime);
+        bullet.GetComponent<Rigidbody>().velocity = transform.forward * speedBullet;
+    }
+    public void Deliverdame()
+    {
+        skullHealth.TakeDame(dame);
     }
     public void Onshoot() => animShoot.SetTrigger(shootParaname);
     private void Update()

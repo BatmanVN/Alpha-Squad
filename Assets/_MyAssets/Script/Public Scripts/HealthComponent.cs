@@ -8,10 +8,20 @@ public class HealthComponent : MonoBehaviour
 {
     [SerializeField] private float _maxHealth;
     [SerializeField] private float _health;
-    public UnityEvent<float> onAttack;
+    //public UnityEvent onTakeDame;
+    public UnityEvent onDie;
+    public UnityEvent<float, float> onChangedHealth;
 
     public float MaxHealth { get => _maxHealth; protected set => _maxHealth = value; }
-    public float Health { get => _health; protected set => _health = value; }
+    public float Health 
+    { 
+        get => _health;
+        set
+        {
+            _health = value;
+            onChangedHealth?.Invoke(_health, _maxHealth);
+        }
+    }
 
     public bool dead => Health <= 0;
 
@@ -21,14 +31,16 @@ public class HealthComponent : MonoBehaviour
     }
     public virtual void TakeDame(float dame)
     {
-        if(!dead)
+        if (dead) return;
+        Health -= dame;
+        //onTakeDame.Invoke();
+        if (dead)
         {
-            Health -= dame;
-            onAttack.Invoke(Health);
+            OnDie();
         }
-        else
-        {
-            return;
-        }
+    }
+    protected virtual void OnDie()
+    {
+        onDie?.Invoke();
     }
 }
