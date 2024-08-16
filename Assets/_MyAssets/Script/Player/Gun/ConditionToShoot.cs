@@ -12,15 +12,20 @@ public class ConditionToShoot : MonoBehaviour
     //[SerializeField] private HealthComponent healthEnemy;
     public UnityEvent onWhiteIndicator;
     public UnityEvent onRedIndicator;
+    public UnityEvent onDisableIndicator;
     public UnityEvent onShoot;
     public void OnIndicator()
     {
         var indicator = Vector3.Distance(transform.position, enemy.position);
+        if (indicator > whiteToEnemy)
+        {
+            onDisableIndicator?.Invoke();
+        }
         if (indicator <= whiteToEnemy && indicator > redToEnemy)
         {
             onWhiteIndicator?.Invoke();
         }
-        else if (indicator <= redToEnemy)
+        if (indicator <= redToEnemy)
         {
             onRedIndicator?.Invoke();
             anim.SetTrigger("Aiming");

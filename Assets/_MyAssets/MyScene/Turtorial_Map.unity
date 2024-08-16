@@ -12860,7 +12860,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VFX: {fileID: 1634269908027506}
   particle: {fileID: 198166134255844744}
-  anim: {fileID: 0}
+  anim: {fileID: 95331680949829840}
 --- !u!1 &1055251597
 GameObject:
   m_ObjectHideFlags: 0
@@ -29502,7 +29502,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1448135674947422, guid: 6a0b69b5d3f6c084ca322e3ce8775fe5, type: 3}
   enemy: {fileID: 2080435387}
   rpm: 30
-  speedBullet: 5
+  speedBullet: 10
   animShoot: {fileID: 95291941412855494}
   currentBullet: 0
   onShoot:
@@ -29559,6 +29559,21 @@ MonoBehaviour:
       - m_Target: {fileID: 1642802503}
         m_TargetAssemblyTypeName: GunIndicator, Assembly-CSharp
         m_MethodName: EnableRedIndicator
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDisableIndicator:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1642802503}
+        m_TargetAssemblyTypeName: GunIndicator, Assembly-CSharp
+        m_MethodName: DisableWhiteIndicator
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

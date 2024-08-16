@@ -18,4 +18,6 @@ public class GunIndicator : MonoBehaviour
         indicator[0].SetActive(false);
         indicator[1].SetActive(true);
     }
+
+    public void DisableWhiteIndicator() => indicator[0].SetActive(false);
 }
