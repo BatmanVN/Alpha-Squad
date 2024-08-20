@@ -8,7 +8,7 @@ public class Shoot_Pistol : Shoot
 {
     private const string shootParaname = "Shoot";
     [SerializeField] private LeanGameObjectPool spawnBullet;
-    [SerializeField] private GameObject bulletPrefab;
+    //[SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform enemy;
     [SerializeField] private int rpm;
     [SerializeField] private float speedBullet;
@@ -18,6 +18,7 @@ public class Shoot_Pistol : Shoot
     [SerializeField] private SkullHealth skullHealth;
     //[SerializeField] private UnityEvent onTakeDame;
     [SerializeField] private float dame;
+    private int countBullet;
 
     //private bool onTrigger;
     private float _interval;
@@ -37,8 +38,15 @@ public class Shoot_Pistol : Shoot
 
     private void ShootPistol()
     {
-        GameObject bullet = Instantiate(bulletPrefab, pointBullet.position, pointBullet.rotation);
+        GameObject bullet = spawnBullet.Spawn(pointBullet.position, pointBullet.rotation);
         bullet.GetComponent<Rigidbody>().velocity = transform.forward * speedBullet;
+        countBullet++;
+    }
+
+    public void DespawnBullet()
+    {
+        if(countBullet == 5)
+            spawnBullet.DespawnOldest();
     }
     public void Deliverdame()
     {
@@ -47,7 +55,7 @@ public class Shoot_Pistol : Shoot
     public void Onshoot() => animShoot.SetTrigger(shootParaname);
     private void Update()
     {
-        
+        DespawnBullet();
     }
     
 }
