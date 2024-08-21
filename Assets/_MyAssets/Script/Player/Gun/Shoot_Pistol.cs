@@ -13,7 +13,7 @@ public class Shoot_Pistol : Shoot
     [SerializeField] private int rpm;
     [SerializeField] private float speedBullet;
     [SerializeField] private Animator animShoot;
-    [SerializeField] private int currentBullet;
+
     [SerializeField] private UnityEvent onShoot;
     [SerializeField] private SkullHealth skullHealth;
     //[SerializeField] private UnityEvent onTakeDame;

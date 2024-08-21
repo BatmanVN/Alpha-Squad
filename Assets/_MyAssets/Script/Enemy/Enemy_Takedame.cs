@@ -14,4 +14,8 @@ public class Enemy_Takedame : MonoBehaviour
             onTakeDame?.Invoke();
         }
     }
+    private void Update()
+    {
+        
+    }
 }

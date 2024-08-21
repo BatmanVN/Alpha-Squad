@@ -46,7 +46,7 @@ public class Enemy_move : MonoBehaviour
     private void Move()
     {
         var distance = Vector3.Distance(transform.position, player.position);
-       if (detec.Deteced == true)
+       if (detec.Deteced)
         {
             Moving = distance > distanceStop;
             if(Moving)
