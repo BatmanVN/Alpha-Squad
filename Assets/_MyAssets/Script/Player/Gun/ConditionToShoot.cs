@@ -5,15 +5,24 @@ using UnityEngine.Events;
 
 public class ConditionToShoot : MonoBehaviour
 {
+    private const string aimParaname = "Aiming";
     [SerializeField] private Transform enemy;
     [SerializeField] private float whiteToEnemy;
     [SerializeField] private float redToEnemy;
     [SerializeField] private Animator anim;
-    //[SerializeField] private HealthComponent healthEnemy;
     public UnityEvent onWhiteIndicator;
     public UnityEvent onRedIndicator;
     public UnityEvent onDisableIndicator;
-    public UnityEvent onShoot;
+    private bool _onShoot;
+
+    public bool OnShoot
+    {
+        get => _onShoot;
+        set
+        {
+            _onShoot = value;
+        }
+    }
     public void OnIndicator()
     {
         var indicator = Vector3.Distance(transform.position, enemy.position);
@@ -24,14 +33,18 @@ public class ConditionToShoot : MonoBehaviour
         if (indicator <= whiteToEnemy && indicator > redToEnemy)
         {
             onWhiteIndicator?.Invoke();
+            OnShoot = false;
         }
         if (indicator <= redToEnemy)
         {
             onRedIndicator?.Invoke();
-            anim.SetTrigger("Aiming");
+            //anim.SetTrigger(aimParaname);
             transform.LookAt(enemy);
-            onShoot?.Invoke();
+            OnShoot = true;
         }
     }
-
+    private void Update()
+    {
+        OnIndicator();
+    }
 }

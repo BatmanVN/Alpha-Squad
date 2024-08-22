@@ -6420,6 +6420,67 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &517669576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517669572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198390451c4ccce44a59310367fc6175, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 2080435387}
+  whiteToEnemy: 15
+  redToEnemy: 8.5
+  anim: {fileID: 95291941412855494}
+  onWhiteIndicator:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1642802503}
+        m_TargetAssemblyTypeName: GunIndicator, Assembly-CSharp
+        m_MethodName: EnableWhiteIndicator
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onRedIndicator:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1642802503}
+        m_TargetAssemblyTypeName: GunIndicator, Assembly-CSharp
+        m_MethodName: EnableRedIndicator
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDisableIndicator:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1642802503}
+        m_TargetAssemblyTypeName: GunIndicator, Assembly-CSharp
+        m_MethodName: DisableWhiteIndicator
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &520750227
 GameObject:
   m_ObjectHideFlags: 0
@@ -26919,7 +26980,6 @@ GameObject:
   - component: {fileID: 95291941412855495}
   - component: {fileID: 95291941412855496}
   - component: {fileID: 95291941412855497}
-  - component: {fileID: 95291941412855498}
   m_Layer: 0
   m_Name: Agent_00_Number7_skin_VIP_01
   m_TagString: Player
@@ -28949,9 +29009,9 @@ MonoBehaviour:
   onAttack:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 95291941412855498}
-        m_TargetAssemblyTypeName: ConditionToShoot, Assembly-CSharp
-        m_MethodName: OnIndicator
+      - m_Target: {fileID: 95291941412855497}
+        m_TargetAssemblyTypeName: Shoot_Pistol, Assembly-CSharp
+        m_MethodName: Onshoot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29009,9 +29069,10 @@ MonoBehaviour:
   TimeDelay: 7
   spawnBullet: {fileID: 1584771442}
   enemy: {fileID: 2080435387}
-  rpm: 30
+  rpm: 10
   speedBullet: 10
   animShoot: {fileID: 95291941412855494}
+  condition: {fileID: 517669576}
   onShoot:
     m_PersistentCalls:
       m_Calls:
@@ -29029,82 +29090,6 @@ MonoBehaviour:
         m_CallState: 2
   skullHealth: {fileID: 2080435388}
   dame: 10
---- !u!114 &95291941412855498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1488029236634123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 198390451c4ccce44a59310367fc6175, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 2080435387}
-  whiteToEnemy: 15
-  redToEnemy: 8.5
-  anim: {fileID: 95291941412855494}
-  onWhiteIndicator:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1642802503}
-        m_TargetAssemblyTypeName: GunIndicator, Assembly-CSharp
-        m_MethodName: EnableWhiteIndicator
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onRedIndicator:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1642802503}
-        m_TargetAssemblyTypeName: GunIndicator, Assembly-CSharp
-        m_MethodName: EnableRedIndicator
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDisableIndicator:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1642802503}
-        m_TargetAssemblyTypeName: GunIndicator, Assembly-CSharp
-        m_MethodName: DisableWhiteIndicator
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onShoot:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 95291941412855497}
-        m_TargetAssemblyTypeName: Shoot_Pistol, Assembly-CSharp
-        m_MethodName: UpdateFiring
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!95 &95331680949829840
 Animator:
   serializedVersion: 5

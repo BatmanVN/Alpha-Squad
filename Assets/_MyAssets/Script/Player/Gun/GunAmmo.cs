@@ -41,14 +41,14 @@ public class GunAmmo : MonoBehaviour
 
     private void UnlockShooting()
     {
-        gun.enabled = true;
+        gun.IsLocked = true;
         onUnlockShooting?.Invoke();
     }
 
     private void LockShooting()
     {
         onLockShooting?.Invoke();
-        gun.enabled = false;
+        gun.IsLocked = false;
         StartCoroutine(DelayUnlock());
     }
     private IEnumerator DelayUnlock()
