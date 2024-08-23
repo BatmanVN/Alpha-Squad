@@ -13,7 +13,6 @@ public class Move : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private Transform enemy;
     public UnityEvent onAttack;
-    public UnityEvent outAttack;
 
     private void CharacterMove()
     {
@@ -27,11 +26,10 @@ public class Move : MonoBehaviour
             Quaternion targetRotation = Quaternion.LookRotation(characterController.velocity);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
             anim.SetBool(runParaname, true);
-            outAttack?.Invoke();
+            anim.SetBool("Aim", false);
         }
         if(hInput == 0 && xInput == 0)
         {
-            //transform.LookAt(enemy);
             anim.SetBool(runParaname, false);
             onAttack?.Invoke();
         }

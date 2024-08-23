@@ -8,19 +8,14 @@ public class Shoot_Pistol : Shoot
 {
     private const string shootParaname = "Shoot";
     [SerializeField] private LeanGameObjectPool spawnBullet;
-    //[SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform enemy;
     [SerializeField] private int rpm;
     [SerializeField] private float speedBullet;
     [SerializeField] private Animator animShoot;
-
     [SerializeField] private UnityEvent onShoot;
     [SerializeField] private SkullHealth skullHealth;
-    //[SerializeField] private UnityEvent onTakeDame;
     [SerializeField] private float dame;
     private int countBullet;
-
-    //private bool onTrigger;
     private float _interval;
     private float _lastShot;
     private void Start() => _interval = 60f / rpm;
@@ -29,8 +24,10 @@ public class Shoot_Pistol : Shoot
     {
         if(Time.time - _lastShot > _interval)
         {
+            transform.LookAt(enemy);
             ShootPistol();
-            Onshoot();
+            animShoot.SetTrigger("Shoot");
+            //Onshoot();
             onShoot?.Invoke();
             _lastShot = Time.time;
         }
@@ -52,8 +49,6 @@ public class Shoot_Pistol : Shoot
     {
         skullHealth.TakeDame(dame);
     }
-    public void Onshoot() => animShoot.SetBool(shootParaname,true);
-    public void OutShoot() => animShoot.SetBool(shootParaname, false);
     private void Update()
     {
         DespawnBullet();

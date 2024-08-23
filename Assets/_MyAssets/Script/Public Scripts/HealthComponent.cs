@@ -8,7 +8,7 @@ public class HealthComponent : MonoBehaviour
 {
     [SerializeField] private float _maxHealth;
     [SerializeField] private float _health;
-    //public UnityEvent onTakeDame;
+
     public UnityEvent onDie;
     public UnityEvent<float, float> onChangedHealth;
 
@@ -33,7 +33,7 @@ public class HealthComponent : MonoBehaviour
     {
         if (dead) return;
         Health -= dame;
-        //onTakeDame.Invoke();
+
         if (dead)
         {
             OnDie();

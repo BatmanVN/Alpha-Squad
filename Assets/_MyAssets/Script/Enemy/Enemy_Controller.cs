@@ -10,6 +10,7 @@ public class Enemy_Controller : MonoBehaviour
     [SerializeField] private Collider collider3D;
     [SerializeField] private NavMeshAgent nav;
     [SerializeField] private GameObject healthBar;
+    [SerializeField] private Animator anim;
 
     private bool isPlay;
 
@@ -46,6 +47,7 @@ public class Enemy_Controller : MonoBehaviour
         collider3D.enabled = false;
         nav.isStopped = true;
         healthBar.SetActive(false);
+        anim.enabled = false;
     }
     private void Update()
     {
