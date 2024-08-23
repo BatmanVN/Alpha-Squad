@@ -26,7 +26,6 @@ public class Move : MonoBehaviour
             Quaternion targetRotation = Quaternion.LookRotation(characterController.velocity);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
             anim.SetBool(runParaname, true);
-            anim.SetBool("Aim", false);
         }
         if(hInput == 0 && xInput == 0)
         {

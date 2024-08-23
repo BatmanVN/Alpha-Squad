@@ -11,6 +11,7 @@ public class Enemy_Controller : MonoBehaviour
     [SerializeField] private NavMeshAgent nav;
     [SerializeField] private GameObject healthBar;
     [SerializeField] private Animator anim;
+    [SerializeField] private Rigidbody[] rig;
 
     private bool isPlay;
 
@@ -27,6 +28,11 @@ public class Enemy_Controller : MonoBehaviour
     {
         isPlay = false;
         DisableComponents();
+        collider3D.enabled = false;
+        nav.isStopped = true;
+        healthBar.SetActive(false);
+        anim.enabled = false;
+        SetRagdoll();
     }
 
     private void SetActiveComponents(bool isActive)
@@ -36,7 +42,13 @@ public class Enemy_Controller : MonoBehaviour
             component.enabled = isActive;
         }
     }
-
+    public void SetRagdoll()
+    {
+        for (int i = 0; i < rig.Length; i++)
+        {
+            rig[i].isKinematic = false;
+        }
+    }
     private void EnableComponents()
     {
         SetActiveComponents(true);
@@ -44,10 +56,7 @@ public class Enemy_Controller : MonoBehaviour
     private void DisableComponents()
     {
         SetActiveComponents(false);
-        collider3D.enabled = false;
-        nav.isStopped = true;
-        healthBar.SetActive(false);
-        anim.enabled = false;
+
     }
     private void Update()
     {

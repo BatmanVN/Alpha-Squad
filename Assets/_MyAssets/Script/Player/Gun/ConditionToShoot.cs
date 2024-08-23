@@ -17,7 +17,7 @@ public class ConditionToShoot : MonoBehaviour
     public void OnIndicator()
     {
         var indicator = Vector3.Distance(player.position, enemy.position);
-        if (indicator > whiteToEnemy)
+        if (indicator > whiteToEnemy )
         {
             onDisableIndicator?.Invoke();
         }

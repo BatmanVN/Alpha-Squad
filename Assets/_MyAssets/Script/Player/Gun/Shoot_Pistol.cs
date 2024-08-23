@@ -27,7 +27,6 @@ public class Shoot_Pistol : Shoot
             transform.LookAt(enemy);
             ShootPistol();
             animShoot.SetTrigger("Shoot");
-            //Onshoot();
             onShoot?.Invoke();
             _lastShot = Time.time;
         }
