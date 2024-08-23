@@ -25,8 +25,8 @@ public class Enemy_Attack : MonoBehaviour
     //        _lastAttack = Time.time;
     //    }
     //}
-    public void StartAttack() => _animEnemy.SetTrigger(attackParaname);
-    public void StopAttack() => _animEnemy.SetBool("Run", true);
+    public void StartAttack() => _animEnemy.SetBool(attackParaname,true);
+    public void StopAttack() => _animEnemy.SetBool(attackParaname, false);
     public void OnAttack()
     {
         playerHealth.TakeDame(_dame);

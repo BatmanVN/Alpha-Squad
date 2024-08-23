@@ -24,14 +24,14 @@ public class ConditionToShoot : MonoBehaviour
         if (indicator <= whiteToEnemy && indicator > redToEnemy)
         {
             onWhiteIndicator?.Invoke();
+            anim.SetBool("Aim", false);
         }
         if (indicator <= redToEnemy)
         {
-            onRedIndicator?.Invoke();
-            anim.SetTrigger("Aiming");
             transform.LookAt(enemy);
+            onRedIndicator?.Invoke();
+            anim.SetBool("Aim",true);
             onShoot?.Invoke();
         }
     }
-
 }

@@ -11,10 +11,10 @@ public class OpenChest : MonoBehaviour
 
     public void CanOpenChest()
     {
-        if(opened == false)
+        if(!opened)
         {
             VFX.SetActive(true);
-            anim.SetTrigger("LB_Open1");
+            anim.SetTrigger("LB_Start");
             particle.Play();
             opened = true;
         }

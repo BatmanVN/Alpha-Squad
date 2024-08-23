@@ -17,4 +17,8 @@ public class Detected_Player : MonoBehaviour
             Deteced = true;
         }
     }
+    private void Update()
+    {
+        
+    }
 }

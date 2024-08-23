@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Lean.Pool;
 
 public class Enemy_Takedame : MonoBehaviour
 {
@@ -12,5 +13,9 @@ public class Enemy_Takedame : MonoBehaviour
         {
             onTakeDame?.Invoke();
         }
+    }
+    private void Update()
+    {
+        
     }
 }
