@@ -8,6 +8,7 @@ public class DisplayAmmo : MonoBehaviour
     [SerializeField] private GunAmmo ammo;
     [SerializeField] private Text ammoText;
     [SerializeField] private Image foreGround;
+    //[SerializeField] private Image timeReload;
     private void Start()
     {
         ammo.onChangeAmmoValue.AddListener(DisplayAmmoText);
@@ -17,5 +18,9 @@ public class DisplayAmmo : MonoBehaviour
     {
         ammoText.text = ammo.LoadAmmo.ToString();
         foreGround.fillAmount = ammo.LoadAmmo / ammo.Magsize;
+    }
+    public void DisPlayReload()
+    {
+        
     }
 }

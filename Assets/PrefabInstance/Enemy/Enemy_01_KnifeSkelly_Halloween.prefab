@@ -293,6 +293,7 @@ GameObject:
   - component: {fileID: 2080435395}
   - component: {fileID: 2080435398}
   - component: {fileID: 107154563923913980}
+  - component: {fileID: 9086328912238364918}
   m_Layer: 17
   m_Name: Enemy_01_KnifeSkelly_Halloween
   m_TagString: Enemy
@@ -410,9 +411,7 @@ MonoBehaviour:
   health: {fileID: 0}
   components: []
   collider3D: {fileID: 0}
-  nav: {fileID: 0}
   healthBar: {fileID: 0}
-  anim: {fileID: 0}
 --- !u!114 &2080435393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -540,6 +539,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &9086328912238364918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360064594724621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f52759608eb494429375bd862d7ab6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rig: []
+  anim: {fileID: 0}
 --- !u!1 &1363947197672837
 GameObject:
   m_ObjectHideFlags: 0
