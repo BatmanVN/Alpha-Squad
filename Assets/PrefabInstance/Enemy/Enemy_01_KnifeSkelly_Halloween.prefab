@@ -410,8 +410,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 0}
   components: []
-  collider3D: {fileID: 0}
+  nav: {fileID: 0}
   healthBar: {fileID: 0}
+  indicator: {fileID: 0}
 --- !u!114 &2080435393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,7 +524,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69ddb860c430108428cbbfa6bb0efbfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicator: {fileID: 0}
   onTakeDame:
     m_PersistentCalls:
       m_Calls:
@@ -1080,6 +1080,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4821633029944842}
   - component: {fileID: 726628024686854452}
+  - component: {fileID: 5475894742040866604}
   m_Layer: 0
   m_Name: TargetIndicator
   m_TagString: Untagged
@@ -1116,6 +1117,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 0, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5475894742040866604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713817412708324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad10159d4968cbd4d8fc93e988a23acb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indicator:
+  - {fileID: 1227348023095695}
+  - {fileID: 2916407859203604309}
+  enemy: {fileID: 4569538342355992}
 --- !u!1 &1731888294908304
 GameObject:
   m_ObjectHideFlags: 0

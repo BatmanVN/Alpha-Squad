@@ -22,7 +22,7 @@ public class Enemy_move : MonoBehaviour
         {
             if (_ismoving == value) return;
             _ismoving = value;
-            InvokeRepeating(nameof(OnIsValueChanged), 0f, 2f);
+            OnIsValueChanged();
         }
     }
     private void Start()

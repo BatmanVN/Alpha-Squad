@@ -10,6 +10,7 @@ public class ConditionToShoot : MonoBehaviour
     [SerializeField] private float whiteToEnemy;
     [SerializeField] private float redToEnemy;
     [SerializeField] private Animator anim;
+    [SerializeField] private SkullHealth health;
     public UnityEvent onWhiteIndicator;
     public UnityEvent onRedIndicator;
     public UnityEvent onDisableIndicator;
@@ -17,7 +18,7 @@ public class ConditionToShoot : MonoBehaviour
     public void OnIndicator()
     {
         var indicator = Vector3.Distance(player.position, enemy.position);
-        if (indicator > whiteToEnemy )
+        if (indicator > whiteToEnemy)
         {
             onDisableIndicator?.Invoke();
         }
@@ -27,6 +28,7 @@ public class ConditionToShoot : MonoBehaviour
         }
         if (indicator <= redToEnemy)
         {
+            if (health.dead) return;
             player.LookAt(enemy);
             onRedIndicator?.Invoke();
             onShoot?.Invoke();

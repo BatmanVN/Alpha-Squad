@@ -6,7 +6,6 @@ using Lean.Pool;
 
 public class Enemy_Takedame : MonoBehaviour
 {
-    [SerializeField] private GameObject indicator;
     [SerializeField] private UnityEvent onTakeDame;
     private void OnTriggerEnter(Collider enemy)
     {

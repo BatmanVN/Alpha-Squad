@@ -14,7 +14,7 @@ public class SkullHealth : HealthComponent
     }
     public void ActiveChest()
     {
-        if (!dead) return;
+        if (dead)
         onOpenchest?.Invoke();
     }
     private void Update()

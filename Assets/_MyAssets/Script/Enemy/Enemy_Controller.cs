@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class Enemy_Controller : MonoBehaviour
 {
     [SerializeField] private HealthComponent health;
     [SerializeField] private List<MonoBehaviour> components;
-    //[SerializeField] private Collider collider3D;
+    [SerializeField] private NavMeshAgent nav;
     [SerializeField] private GameObject healthBar;
     [SerializeField] private GameObject indicator;
-
     private bool isPlay;
 
     private void Start()
@@ -30,7 +30,13 @@ public class Enemy_Controller : MonoBehaviour
     }
     private void TurnOff()
     {
-        //collider3D.enabled = false;
+        var colls = GetComponentsInChildren<Collider>();
+        for (int i = colls.Length - 1; i >= 0; i--)
+        {
+            colls[i].isTrigger = true;
+            
+        }
+        nav.enabled = false;
         healthBar.SetActive(false);
         indicator.SetActive(false);
     }
