@@ -7,7 +7,7 @@ public class Enemy_Controller : MonoBehaviour
 {
     [SerializeField] private HealthComponent health;
     [SerializeField] private List<MonoBehaviour> components;
-    [SerializeField] private Collider collider3D;
+    //[SerializeField] private Collider collider3D;
     [SerializeField] private GameObject healthBar;
     [SerializeField] private GameObject indicator;
 
@@ -30,7 +30,7 @@ public class Enemy_Controller : MonoBehaviour
     }
     private void TurnOff()
     {
-        collider3D.enabled = false;
+        //collider3D.enabled = false;
         healthBar.SetActive(false);
         indicator.SetActive(false);
     }
