@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ButtonInPause : MonoBehaviour
+public class ButtonInPause : Singleton<ButtonInPause>
 {
     [SerializeField] private GameObject pauseBar;
     [SerializeField] private GameObject joyStick;

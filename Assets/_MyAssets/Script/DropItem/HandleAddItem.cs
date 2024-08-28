@@ -2,20 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DropRandomItem : MonoBehaviour
+public class HandleAddItem : MonoBehaviour
 {
     [SerializeField] private GameObject[] listItem;
     [SerializeField] private Transform enemy;
     [SerializeField] private Rigidbody rigs;
     [SerializeField] private Vector3 direction;
-    private int random;
+    [SerializeField] private int random;
 
+    //Set random thu tu 1 item dc bat
     private void Start()
     {
         random = Random.Range(0, listItem.Length);
         Debug.Log("Random: " + random);
     }
 
+    //Bat obj Item Drop tu vi tri cua quai vat & gan rig cho obj item do
+    //Add = tay
     public void DropItem()
     {
         for (int i = 0; i < listItem.Length; i++)
