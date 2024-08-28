@@ -2,14 +2,19 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: PickUp_EquipmentFragment
   m_Shader: {fileID: 4800000, guid: 5f201e523cd9fcd4e8a0d21df097140d, type: 3}
-  m_ShaderKeywords: CSC ONE_SIDE WALL_SHADOWS WORLD_OUTLINE
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - CSC
+  - ONE_SIDE
+  - WALL_SHADOWS
+  - WORLD_OUTLINE
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -19,97 +24,98 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-      _MainTex:
+    - _MainTex:
         m_Texture: {fileID: 2800000, guid: 367793bafa050d248b187a7d6b43286a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
-      PixelSnap: 0
-      _Amplitude: 3.64
-      _BumpScale: 1
-      _CautionThreshold: -1
-      _ColorMask: 15
-      _Culling: 2
-      _Cutoff: 0.5
-      _DamageBlinkRatio: 0
-      _DarkRimAmount: 0
-      _DarkRimThreshold: 0
-      _DetailNormalMapScale: 1
-      _DstBlend: 0
-      _GlossMapScale: 1
-      _Glossiness: 11
-      _GlossyReflections: 1
-      _Glow: 0.61
-      _GlowIntensity: 1
-      _GoodThreshold: 0.17
-      _IntensityMultiplier: 1.55
-      _InvFade: 0.49
-      _LightThreshold: -6.07
-      _Magnitude: 0.205
-      _Metallic: 0
-      _Mode: 0
-      _OcclusionStrength: 1
-      _Offset: 0
-      _OutlineWidth: 0.07
-      _Parallax: 0.02
-      _ReadMask: 255
-      _Reflectiveness: 0.5
-      _RimAmount: 0.8
-      _RimLight: 0.178
-      _RimLightSZ: 0.65
-      _RimThreshold: 0
-      _Scale: 1
-      _Scale2: 1
-      _ShadowStrength: 1
-      _Shininess: -1.5
-      _Smoothness: 0
-      _SmoothnessTextureChannel: 0
-      _SpecularHighlights: 1
-      _SrcBlend: 1
-      _Stencil: 0
-      _StencilComp: 0
-      _StencilFail: 0
-      _StencilOp: 0
-      _StencilZFail: 0
-      _SwapOffset: 0
-      _SwapStrength: 7
-      _ThirdRimAmount: 0.18
-      _ThirdRimThreshold: 1
-      _TimeMultiplier: -0.87
-      _UVMaxX: -0.09
-      _UVMaxY: -0.32
-      _UVMinX: 0
-      _UVMinY: 0
-      _UVSec: 0
-      _WorldOutline: 1
-      _WriteMask: 255
-      _ZTest: 4
-      _ZWrite: 1
-      _csc: 1
-      _cwsc: 1
-      _os: 1
+    - PixelSnap: 0
+    - _Amplitude: 3.64
+    - _BumpScale: 1
+    - _CautionThreshold: -1
+    - _ColorMask: 15
+    - _Culling: 2
+    - _Cutoff: 0.5
+    - _DamageBlinkRatio: 0
+    - _DarkRimAmount: 0
+    - _DarkRimThreshold: 0
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 11
+    - _GlossyReflections: 1
+    - _Glow: 0.61
+    - _GlowIntensity: 1
+    - _GoodThreshold: 0.17
+    - _IntensityMultiplier: 1.55
+    - _InvFade: 0.49
+    - _LightThreshold: -6.07
+    - _Magnitude: 0.205
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Offset: 0
+    - _OutlineWidth: 0.07
+    - _Parallax: 0.02
+    - _ReadMask: 255
+    - _Reflectiveness: 0.5
+    - _RimAmount: 0.8
+    - _RimLight: 0.178
+    - _RimLightSZ: 0.65
+    - _RimThreshold: 0
+    - _Scale: 1
+    - _Scale2: 1
+    - _ShadowStrength: 1
+    - _Shininess: -1.5
+    - _Smoothness: 0
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _Stencil: 0
+    - _StencilComp: 0
+    - _StencilFail: 0
+    - _StencilOp: 0
+    - _StencilZFail: 0
+    - _SwapOffset: 0
+    - _SwapStrength: 7
+    - _ThirdRimAmount: 0.18
+    - _ThirdRimThreshold: 1
+    - _TimeMultiplier: -0.87
+    - _UVMaxX: -0.09
+    - _UVMaxY: -0.32
+    - _UVMinX: 0
+    - _UVMinY: 0
+    - _UVSec: 0
+    - _WorldOutline: 1
+    - _WriteMask: 255
+    - _ZTest: 4
+    - _ZWrite: 1
+    - _csc: 1
+    - _cwsc: 1
+    - _os: 1
     m_Colors:
-      _AmbientColor: {r: 1, g: 1, b: 1, a: 1}
-      _CautionColor: {r: 1, g: 1, b: 1, a: 1}
-      _Color: {r: 1, g: 1, b: 1, a: 1}
-      _ColorA: {r: 1, g: 1, b: 1, a: 1}
-      _ColorB: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-      _ColorC: {r: 1, g: 1, b: 1, a: 1}
-      _CriticalColor: {r: 1, g: 1, b: 1, a: 1}
-      _CustomShadowColor: {r: 1, g: 0.37364587, b: 0.28773582, a: 1}
-      _CustomWallShadowColor: {r: 0, g: 0, b: 0, a: 1}
-      _DamageBlinkColor: {r: 1, g: 1, b: 1, a: 1}
-      _DarkRimColor: {r: 1, g: 1, b: 1, a: 1}
-      _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-      _GoodColor: {r: 1, g: 1, b: 1, a: 1}
-      _InnerColor: {r: 1, g: 1, b: 1, a: 1}
-      _LightColor: {r: 1, g: 0.9829241, b: 0.8632076, a: 1}
-      _OuterColor: {r: 1, g: 1, b: 1, a: 1}
-      _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
-      _RimColor: {r: 0.6886792, g: 0.40805656, b: 0.30860624, a: 1}
-      _SpecColor: {r: 0.6367924, g: 0.9064377, b: 1, a: 1}
-      _SpecularColor: {r: 0.6179293, g: 0.6415094, b: 0.39640442, a: 1}
-      _ThirdRimColor: {r: 0.09153615, g: 0.09459618, b: 0.16037738, a: 1}
-      _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
-      _WallColorShift: {r: 1, g: 1, b: 1, a: 1}
+    - _AmbientColor: {r: 1, g: 1, b: 1, a: 1}
+    - _CautionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _ColorA: {r: 1, g: 1, b: 1, a: 1}
+    - _ColorB: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _ColorC: {r: 1, g: 1, b: 1, a: 1}
+    - _CriticalColor: {r: 1, g: 1, b: 1, a: 1}
+    - _CustomShadowColor: {r: 1, g: 0.37364587, b: 0.28773582, a: 1}
+    - _CustomWallShadowColor: {r: 0, g: 0, b: 0, a: 1}
+    - _DamageBlinkColor: {r: 1, g: 1, b: 1, a: 1}
+    - _DarkRimColor: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _GoodColor: {r: 1, g: 1, b: 1, a: 1}
+    - _InnerColor: {r: 1, g: 1, b: 1, a: 1}
+    - _LightColor: {r: 1, g: 0.9829241, b: 0.8632076, a: 1}
+    - _OuterColor: {r: 1, g: 1, b: 1, a: 1}
+    - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
+    - _RimColor: {r: 0.6886792, g: 0.40805656, b: 0.30860624, a: 1}
+    - _SpecColor: {r: 0.6367924, g: 0.9064377, b: 1, a: 1}
+    - _SpecularColor: {r: 0.6179293, g: 0.6415094, b: 0.39640442, a: 1}
+    - _ThirdRimColor: {r: 0.09153615, g: 0.09459618, b: 0.16037738, a: 1}
+    - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+    - _WallColorShift: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
