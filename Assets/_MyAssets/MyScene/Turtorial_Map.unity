@@ -26915,6 +26915,7 @@ GameObject:
   - component: {fileID: 95291941412855495}
   - component: {fileID: 95291941412855496}
   - component: {fileID: 95291941412855497}
+  - component: {fileID: 95291941412855498}
   m_Layer: 0
   m_Name: Agent_00_Number7_skin_VIP_01
   m_TagString: Player
@@ -29029,6 +29030,20 @@ MonoBehaviour:
         m_CallState: 2
   skullHealth: {fileID: 1200084523}
   dame: 10
+--- !u!136 &95291941412855498
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488029236634123}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95331680949829840
 Animator:
   serializedVersion: 5
@@ -43283,6 +43298,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6352070637232997020, guid: 68c8cf6df6cef924fae3fefcc4826e49, type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 6352070637481013658, guid: 68c8cf6df6cef924fae3fefcc4826e49, type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 6352070637767244806, guid: 68c8cf6df6cef924fae3fefcc4826e49, type: 3}
       propertyPath: enemy
       value: 
@@ -43334,6 +43357,18 @@ PrefabInstance:
     - target: {fileID: 6352070637767244921, guid: 68c8cf6df6cef924fae3fefcc4826e49, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6352070639199037104, guid: 68c8cf6df6cef924fae3fefcc4826e49, type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 6352070639241881603, guid: 68c8cf6df6cef924fae3fefcc4826e49, type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 6406204249120085169, guid: 68c8cf6df6cef924fae3fefcc4826e49, type: 3}
+      propertyPath: m_Constraints
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68c8cf6df6cef924fae3fefcc4826e49, type: 3}

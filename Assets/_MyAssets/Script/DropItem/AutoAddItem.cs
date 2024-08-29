@@ -32,4 +32,8 @@ public class AutoAddItem : MonoBehaviour
           rigs = items[random].GetComponent<Rigidbody>();
           rigs.velocity = direction;
     }
+    public void DestroyItem()
+    {
+        Destroy(items[random]);
+    }
 }
