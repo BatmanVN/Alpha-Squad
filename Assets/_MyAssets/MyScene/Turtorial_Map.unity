@@ -12282,17 +12282,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1039589885}
   m_CullTransparentMesh: 0
---- !u!114 &1044968602 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5387191190201856647, guid: 83a5dbe05790b9d4d9f1af469d903647, type: 3}
-  m_PrefabInstance: {fileID: 5387191190843065885}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c1cacc63eaeb9142bf0cd2a4f3ce621, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1051514167
 GameObject:
   m_ObjectHideFlags: 0
@@ -26915,6 +26904,7 @@ GameObject:
   - component: {fileID: 95291941412855495}
   - component: {fileID: 95291941412855496}
   - component: {fileID: 95291941412855497}
+  - component: {fileID: 95291941412855499}
   - component: {fileID: 95291941412855498}
   m_Layer: 0
   m_Name: Agent_00_Number7_skin_VIP_01
@@ -29038,12 +29028,39 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1488029236634123}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &95291941412855499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488029236634123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a0b166854f966d4892e8660a935fdc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onCollect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 239222207}
+        m_TargetAssemblyTypeName: AutoAddItem, Assembly-CSharp
+        m_MethodName: DestroyItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &95331680949829840
 Animator:
   serializedVersion: 5
@@ -43433,7 +43450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6584013544584897992, guid: 310cd9505f9849d47ae9bdbe483c2ab0, type: 3}
       propertyPath: onDie.m_PersistentCalls.m_Calls.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6584013544584897992, guid: 310cd9505f9849d47ae9bdbe483c2ab0, type: 3}
       propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
@@ -43446,7 +43463,7 @@ PrefabInstance:
     - target: {fileID: 6584013544584897992, guid: 310cd9505f9849d47ae9bdbe483c2ab0, type: 3}
       propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1044968602}
+      objectReference: {fileID: 239222207}
     - target: {fileID: 6584013544584897992, guid: 310cd9505f9849d47ae9bdbe483c2ab0, type: 3}
       propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
@@ -43473,7 +43490,7 @@ PrefabInstance:
       objectReference: {fileID: 1054133729}
     - target: {fileID: 6584013544584897992, guid: 310cd9505f9849d47ae9bdbe483c2ab0, type: 3}
       propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: DropRandomItem, Assembly-CSharp
+      value: Collect_DropItem, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6584013544584897992, guid: 310cd9505f9849d47ae9bdbe483c2ab0, type: 3}
       propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
