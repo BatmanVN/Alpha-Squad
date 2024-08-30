@@ -6,15 +6,18 @@ public class AutoAddItem : MonoBehaviour
 {
     [SerializeField] private List<GameObject> items;
     [SerializeField] private Transform enemy;
+    [SerializeField] private Transform player;
     [SerializeField] private Rigidbody rigs;
     [SerializeField] private Vector3 direction;
     [SerializeField] private int random;
+    [SerializeField] private float speed;
 
     //Set random thu tu 1 item dc bat
     //Add auto
     private void Start()
     {
         random = Random.Range(0, transform.childCount);
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         AddItemDrop();
         Debug.Log("random: " + random);
     }
@@ -31,6 +34,11 @@ public class AutoAddItem : MonoBehaviour
           items[random].transform.position = enemy.position;
           rigs = items[random].GetComponent<Rigidbody>();
           rigs.velocity = direction;
+    }
+    public void FlyToPlayer()
+    {
+        rigs = items[random].GetComponent<Rigidbody>();
+        rigs.velocity = player.forward * speed;
     }
     public void DestroyItem()
     {

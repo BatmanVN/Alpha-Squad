@@ -5,12 +5,21 @@ using UnityEngine.Events;
 
 public class Collect_DropItem : MonoBehaviour
 {
+    [SerializeField] private Transform player;
+    [SerializeField] private Transform itemDrop;
+    [SerializeField] private float rangeCollect;
     public UnityEvent onCollect;
-    private void OnTriggerEnter(Collider player)
+
+    public void RangeToCollect()
     {
-        if(player.CompareTag("DropItem"))
+        var range = Vector3.Distance(player.position,itemDrop.position);
+        if (range <= rangeCollect)
         {
             onCollect?.Invoke();
         }
+    }
+    private void Update()
+    {
+        RangeToCollect();
     }
 }
