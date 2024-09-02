@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class OpenChest : MonoBehaviour
 {
-    [SerializeField] private GameObject VFX;
+    //[SerializeField] private GameObject VFX;
     [SerializeField] private Animator anim;
     public UnityEvent onOpenchest;
     private bool opened;
@@ -14,7 +14,7 @@ public class OpenChest : MonoBehaviour
     {
         if(!opened)
         {
-            VFX.SetActive(true);
+            //VFX.SetActive(true);
             anim.SetTrigger("LB_Start");
             opened = true;
             onOpenchest?.Invoke();
