@@ -12,6 +12,7 @@ public class Collect_DropItem : MonoBehaviour
 
     public void RangeToCollect()
     {
+        itemDrop = GetComponentInChildren<Transform>();
         var range = Vector3.Distance(player.position,itemDrop.position);
         if (range <= rangeCollect)
         {
@@ -21,5 +22,10 @@ public class Collect_DropItem : MonoBehaviour
     private void Update()
     {
         RangeToCollect();
+    }
+    private void OnDrawGizmos()
+    {
+        Color color = Color.red;
+        Gizmos.DrawWireSphere(player.position, rangeCollect);
     }
 }

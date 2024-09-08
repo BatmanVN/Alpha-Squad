@@ -38,7 +38,7 @@ public class AutoAddItem : MonoBehaviour
     public void FlyToPlayer()
     {
         rigs = items[random].GetComponent<Rigidbody>();
-        rigs.velocity = player.forward * speed;
+        items[random].transform.position = Vector3.MoveTowards(items[random].transform.position, player.transform.position, speed * Time.deltaTime);
     }
     public void DestroyItem()
     {
