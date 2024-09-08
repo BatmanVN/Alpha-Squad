@@ -29,6 +29,7 @@ public class Shoot_Pistol : Shoot
             animShoot.SetTrigger("Shoot");
             onShoot?.Invoke();
             _lastShot = Time.time;
+            
         }
     }
 
