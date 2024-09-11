@@ -33,11 +33,8 @@ public class HealthComponent : MonoBehaviour
     {
         if (dead) return;
         Health -= dame;
-
         if (dead)
-        {
             OnDie();
-        }
     }
     protected virtual void OnDie()
     {

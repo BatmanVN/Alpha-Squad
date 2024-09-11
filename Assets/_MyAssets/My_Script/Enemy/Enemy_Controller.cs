@@ -30,12 +30,6 @@ public class Enemy_Controller : MonoBehaviour
     }
     private void TurnOff()
     {
-        var colls = GetComponentsInChildren<Collider>();
-        for (int i = colls.Length - 1; i >= 0; i--)
-        {
-            colls[i].isTrigger = true;
-            
-        }
         nav.enabled = false;
         healthBar.SetActive(false);
         indicator.SetActive(false);

@@ -8,8 +8,9 @@ public class Collect_DropItem : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private Transform itemDrop;
     [SerializeField] private float rangeCollect;
+    [SerializeField] private float rangeDestroy;
     public UnityEvent onCollect;
-
+    public UnityEvent onDestroy;
     public void RangeToCollect()
     {
         itemDrop = GetComponentInChildren<Transform>();
@@ -27,5 +28,6 @@ public class Collect_DropItem : MonoBehaviour
     {
         Color color = Color.red;
         Gizmos.DrawWireSphere(player.position, rangeCollect);
+        Gizmos.DrawWireSphere(player.position, rangeDestroy);
     }
 }

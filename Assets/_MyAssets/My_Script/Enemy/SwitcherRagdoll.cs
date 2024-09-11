@@ -47,4 +47,8 @@ public class SwitcherRagdoll : MonoBehaviour
             rig[i].isKinematic = !ragdollEnable;
         }
     }
+    private void Start()
+    {
+        
+    }
 }

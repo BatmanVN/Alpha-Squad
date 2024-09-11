@@ -15,7 +15,13 @@ public class SkullHealth : HealthComponent
     public void ActiveChest()
     {
         if (dead)
-        onOpenchest?.Invoke();
+        {
+            onOpenchest?.Invoke();
+        }
+    }
+    public void DestroyObjec()
+    {
+
     }
     private void Update()
     {

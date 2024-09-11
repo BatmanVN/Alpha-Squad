@@ -33,6 +33,10 @@ public class Move : MonoBehaviour
             onAttack?.Invoke();
         }
     }
+    public void Disable()
+    {
+        this.gameObject.SetActive(false);
+    }
     private void Update()
     {
         CharacterMove();
