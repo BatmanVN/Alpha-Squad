@@ -7,6 +7,7 @@ public class StatusElevator : MonoBehaviour
 {
     private const string nameStates = "openstate";
     [SerializeField] private Animator animator;
+    [SerializeField] private GameObject blackBar;
     public UnityEvent onMoveup;
     void Start()
     {
@@ -19,6 +20,7 @@ public class StatusElevator : MonoBehaviour
     public void CloseElevator()
     {
         animator.SetInteger(nameStates, 2);
+        blackBar.SetActive(true);
     }
     public void MoveOut()
     {

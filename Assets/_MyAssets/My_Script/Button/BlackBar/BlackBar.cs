@@ -11,9 +11,10 @@ public class BlackBar : MonoBehaviour
     {
         Color color = blackBar.color;
         color.a += alpha;
+        blackBar.color = color;
     }
     private void Update()
     {
-        EndMap();
+        InvokeRepeating(nameof(EndMap), 1, 3);
     }
 }

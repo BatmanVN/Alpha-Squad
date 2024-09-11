@@ -13,21 +13,17 @@ public class Collect_DropItem : MonoBehaviour
     public UnityEvent onDestroy;
     public void RangeToCollect()
     {
-        itemDrop = GetComponentInChildren<Transform>();
-        var range = Vector3.Distance(player.position,itemDrop.position);
+        itemDrop = GameObject.FindGameObjectWithTag("DropItem").GetComponent<Transform>();
+        var range = Vector3.Distance(player.position, itemDrop.position);
         if (range <= rangeCollect)
-        {
             onCollect?.Invoke();
-        }
+        if (range < rangeDestroy)
+            onDestroy?.Invoke();
+
     }
     private void Update()
     {
         RangeToCollect();
     }
-    private void OnDrawGizmos()
-    {
-        Color color = Color.red;
-        Gizmos.DrawWireSphere(player.position, rangeCollect);
-        Gizmos.DrawWireSphere(player.position, rangeDestroy);
-    }
+
 }

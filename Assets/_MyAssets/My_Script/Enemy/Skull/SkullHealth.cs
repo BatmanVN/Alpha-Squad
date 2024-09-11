@@ -19,10 +19,10 @@ public class SkullHealth : HealthComponent
             onOpenchest?.Invoke();
         }
     }
-    public void DestroyObjec()
-    {
+    //public void DestroyObjec()
+    //{
 
-    }
+    //}
     private void Update()
     {
         ActiveChest();
