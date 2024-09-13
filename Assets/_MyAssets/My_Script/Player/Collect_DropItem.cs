@@ -11,7 +11,7 @@ public class Collect_DropItem : MonoBehaviour
     [SerializeField] private float rangeDestroy;
     public UnityEvent onCollect;
     public UnityEvent onDestroy;
-    public void RangeToCollect()
+    private void RangeToCollect()
     {
         itemDrop = GameObject.FindGameObjectWithTag("DropItem").GetComponent<Transform>();
         var range = Vector3.Distance(player.position, itemDrop.position);
@@ -19,7 +19,6 @@ public class Collect_DropItem : MonoBehaviour
             onCollect?.Invoke();
         if (range < rangeDestroy)
             onDestroy?.Invoke();
-
     }
     private void Update()
     {

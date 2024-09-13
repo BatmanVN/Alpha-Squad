@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SelectTabs : MonoBehaviour
 {
-    [SerializeField] private List<CategoryUI> categories = new List<CategoryUI>();
+    [SerializeField] private List<CategoryTab> categories = new List<CategoryTab>();
     //[SerializeField] private List<GameObject> buttonTabs;
     //[SerializeField] private List<GameObject> button;
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CategoryUI : MonoBehaviour
+public class CategoryTab : MonoBehaviour
 {
     //public GameObject button;
     public GameObject select;

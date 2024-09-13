@@ -22,7 +22,7 @@ public class OpenChest : MonoBehaviour
         }
     }
 
-    private void DropItem()
+    public void DropItem()
     {
         onDropItem?.Invoke();
     }
