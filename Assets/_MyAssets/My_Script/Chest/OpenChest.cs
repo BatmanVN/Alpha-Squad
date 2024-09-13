@@ -8,6 +8,7 @@ public class OpenChest : MonoBehaviour
     //[SerializeField] private GameObject VFX;
     [SerializeField] private Animator anim;
     public UnityEvent onOpenchest;
+    public UnityEvent onDropItem;
     private bool opened;
 
     public void CanOpenChest()
@@ -19,6 +20,11 @@ public class OpenChest : MonoBehaviour
             opened = true;
             onOpenchest?.Invoke();
         }
+    }
+
+    private void DropItem()
+    {
+        onDropItem?.Invoke();
     }
     private void Start()
     {

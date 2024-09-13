@@ -13,8 +13,8 @@ public class BlackBar : MonoBehaviour
         color.a += alpha;
         blackBar.color = color;
     }
-    private void Update()
+    private void Start()
     {
-        InvokeRepeating(nameof(EndMap), 1, 3);
+        InvokeRepeating(nameof(EndMap), 1, 1);
     }
 }
