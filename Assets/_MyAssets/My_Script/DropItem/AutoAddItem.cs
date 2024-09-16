@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AutoAddItem : MonoBehaviour
 {
@@ -9,27 +10,20 @@ public class AutoAddItem : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float rangeCollect;
     [SerializeField] private float rangeDestroy;
-    //Set random thu tu 1 item dc bat
-    //Add auto
+    //Set random thu tu 
     private void Start()
     {
-        random = Random.Range(0, items.Count);
+        //random = Random.Range(0, items.Count);
     }
     public void DropItems()
     {
-        //for (int i = 0; i < items.Count; i++)
-        //{
-                items[random].DropItem(/*items[i] == items[random]*/);
-        //}
+        random = Random.Range(0, items.Count);
+        items[random].DropItem();
     }
     private void CollectItem()
     {
         items[random].RangeToCollect(rangeCollect,rangeDestroy,speed);
     }
-    //public void CollectedItem()
-    //{
-    //    items[random].DisableItem();
-    //}
     private void Update()
     {
         CollectItem();

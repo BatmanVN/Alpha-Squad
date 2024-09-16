@@ -14748,6 +14748,8 @@ MonoBehaviour:
   - {fileID: 2819444804026756023}
   random: 0
   speed: 3
+  rangeCollect: 3
+  rangeDestroy: 0.5
 --- !u!1 &2865523705916026658
 GameObject:
   m_ObjectHideFlags: 0
@@ -95362,7 +95364,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2867802753460111560
 Transform:
   m_ObjectHideFlags: 0
@@ -95371,7 +95373,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2866364604735371969}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.004}
+  m_LocalPosition: {x: -2.547579, y: -0.53761286, z: -9.323367}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -95409,7 +95411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 2866364604735371969}
-  itemRB: {fileID: 0}
+  itemRB: {fileID: 2865266543423182139}
   direction: {x: 2, y: 5, z: 2}
   enemy: {fileID: 0}
   player: {fileID: 0}

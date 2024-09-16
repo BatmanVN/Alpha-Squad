@@ -10,7 +10,7 @@ public class CategoryDropItem : MonoBehaviour
     [SerializeField] private GameObject item;
     [SerializeField] private Rigidbody itemRB;
     [SerializeField] private Vector3 direction;
-    [SerializeField] private Transform enemy;
+    [SerializeField] private Transform postionDrop;
     [SerializeField] private Transform player;
 
     private bool dropped;
@@ -25,9 +25,9 @@ public class CategoryDropItem : MonoBehaviour
     {
         itemRB = item.GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Transform>();
+        //postionDrop = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Transform>();
         item.SetActive(true);
-        item.transform.position = enemy.position;
+        item.transform.position = postionDrop.position;
         itemRB.velocity = direction;
         dropped = true;
     }
