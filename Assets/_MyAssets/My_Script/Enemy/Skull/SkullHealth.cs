@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class SkullHealth : HealthComponent
+public class SkullHealth : Health
 {
     [SerializeField] private float amorIndex;
     public UnityEvent onOpenchest;

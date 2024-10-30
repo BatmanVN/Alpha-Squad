@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class DisPlay_HealthText : MonoBehaviour
 {
     [SerializeField] private Text textHealth;
-    [SerializeField] private HealthComponent health;
+    [SerializeField] private Health health;
     [SerializeField] private Image healthBar;
     private void Start()
     {

@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using Lean.Pool;
 
 public class Shoot_Pistol : Shoot
 {
     private const string shootParaname = "Shoot";
-    [SerializeField] private LeanGameObjectPool spawnBullet;
+    
     [SerializeField] private Transform enemy;
     [SerializeField] private int rpm;
     [SerializeField] private float speedBullet;
     [SerializeField] private Animator animShoot;
     [SerializeField] private UnityEvent onShoot;
     [SerializeField] private SkullHealth skullHealth;
+    [SerializeField] private BulletType bulletType;
     [SerializeField] private float dame;
     private int countBullet;
     private float _interval;
@@ -25,7 +25,7 @@ public class Shoot_Pistol : Shoot
         if(Time.time - _lastShot > _interval)
         {
             transform.LookAt(enemy);
-            ShootPistol();
+            //ShootPistol();
             animShoot.SetTrigger("Shoot");
             onShoot?.Invoke();
             _lastShot = Time.time;
@@ -33,17 +33,17 @@ public class Shoot_Pistol : Shoot
         }
     }
 
-    private void ShootPistol()
+    //private void ShootPistol()
+    //{
+    //    GameObject bullet = SimplePool.Spawn<>
+    //    bullet.GetComponent<Rigidbody>().velocity = transform.forward * speedBullet;
+    //    countBullet++;
+    //}
+    protected PoolType GetPoolTypeByBulletType()
     {
-        GameObject bullet = spawnBullet.Spawn(pointBullet.position, pointBullet.rotation);
-        bullet.GetComponent<Rigidbody>().velocity = transform.forward * speedBullet;
-        countBullet++;
-    }
-
-    public void DespawnBullet()
-    {
-        if(countBullet == 5)
-            spawnBullet.DespawnOldest();
+        if (bulletType == BulletType.BulletPlayer)
+            return PoolType.BulletPlayer;
+        return PoolType.BulletEnemy;
     }
     public void Deliverdame()
     {
@@ -51,7 +51,6 @@ public class Shoot_Pistol : Shoot
     }
     private void Update()
     {
-        DespawnBullet();
     }
     
 }
