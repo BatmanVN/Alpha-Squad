@@ -28,7 +28,7 @@ public class HandleAddItem : MonoBehaviour
                 listItem[i].SetActive(true);
                 listItem[i].transform.position = enemy.position;
                 rigs = listItem[i].GetComponent<Rigidbody>();
-                rigs.velocity = direction;
+                rigs.linearVelocity = direction;
             }
         }
     }

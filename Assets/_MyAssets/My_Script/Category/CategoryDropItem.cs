@@ -28,7 +28,7 @@ public class CategoryDropItem : MonoBehaviour
         //postionDrop = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Transform>();
         item.SetActive(true);
         item.transform.position = postionDrop.position;
-        itemRB.velocity = direction;
+        itemRB.linearVelocity = direction;
         dropped = true;
     }
     /// <summary>

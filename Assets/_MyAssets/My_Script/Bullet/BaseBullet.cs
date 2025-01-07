@@ -34,7 +34,7 @@ public class BaseBullet : GameUnit
     }
     public void OnInit(Vector3 direction, float _dame)
     {
-        rb.velocity = direction * Speed;
+        rb.linearVelocity = direction * Speed;
         audioFire.Play();
         this.dame = _dame;
     }
