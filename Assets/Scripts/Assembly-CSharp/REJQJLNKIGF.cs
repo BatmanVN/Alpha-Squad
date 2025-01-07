@@ -1,0 +1,8 @@
+public enum REJQJLNKIGF
+{
+	INVALID = -1,
+	REGULAR = 0,
+	ULTIMATE = 1,
+	GLOBAL = 2,
+	ULTIMATE_UPGRADE = 3
+}

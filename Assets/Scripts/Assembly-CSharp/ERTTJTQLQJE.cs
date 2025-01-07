@@ -1,0 +1,12 @@
+public enum ERTTJTQLQJE
+{
+	UNSET = 0,
+	KILL_ENEMIES = 1,
+	WAVES = 2,
+	PUZZLE = 3,
+	BOMB = 4,
+	RIFT_RUSH = 5,
+	HELL = 6,
+	BASE_RAID = 7,
+	WAVES_TIMED = 2
+}

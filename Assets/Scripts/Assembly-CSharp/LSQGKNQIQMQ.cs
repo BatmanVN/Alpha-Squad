@@ -1,0 +1,13 @@
+public enum LSQGKNQIQMQ
+{
+	UNSET = 0,
+	CRAFT_0 = 1,
+	WEAPON_PARTS_0 = 2,
+	TOOLS_0 = 3,
+	WEAPON_PARTS_1 = 4,
+	WEAPON_PARTS_2 = 5,
+	CRAFT_1 = 6,
+	CRAFT_2 = 7,
+	TOOLS_1 = 8,
+	TOOLS_2 = 9
+}

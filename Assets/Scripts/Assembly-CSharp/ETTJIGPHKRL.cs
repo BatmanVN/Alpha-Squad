@@ -1,0 +1,9 @@
+public enum ETTJIGPHKRL
+{
+	DEVICE = 1,
+	IDFA = 2,
+	NAKAMA = 3,
+	GOOGLE = 4,
+	APPLE = 5,
+	GAMECENTER = 6
+}
