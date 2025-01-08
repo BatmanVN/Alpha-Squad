@@ -1,7 +1,0 @@
-public enum PJSMMJIROFF
-{
-	SUPER_POSITIVE = 0,
-	POSITIVE = 1,
-	NEGATIVE = 2,
-	SUPER_NEGATIVE = 3
-}

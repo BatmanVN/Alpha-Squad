@@ -1,3 +1,0 @@
-public class BaseXPExplanationBubble : ExplanationBubble
-{
-}
