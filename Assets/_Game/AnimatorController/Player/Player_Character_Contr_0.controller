@@ -184,10 +184,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61eda04c65c1d2b439c223cd3be50f57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationSpeed: 0
   characterController: {fileID: 0}
   _joystick: {fileID: 0}
   moveSpeed: 0
   anim: {fileID: 0}
+  enemy: {fileID: 0}
+  onAttack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!206 &206000049288595323
 BlendTree:
   m_ObjectHideFlags: 1
@@ -2165,7 +2170,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1102959660195586223}
-    m_Position: {x: 0, y: 0, z: 0}
+    m_Position: {x: -10, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102017622821586295}
     m_Position: {x: 250, y: 0, z: 0}
