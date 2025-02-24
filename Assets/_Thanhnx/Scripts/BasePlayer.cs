@@ -27,7 +27,7 @@ public class BasePlayer : BaseCharacter
         var horizontal = _joystick.Horizontal;
         var vertical = _joystick.Vertical;
         
-        _rb.linearVelocity = new Vector3(horizontal * _moveSpeed, _rb.linearVelocity.y, vertical * _moveSpeed);
+        _rb.velocity = new Vector3(horizontal * _moveSpeed, _rb.velocity.y, vertical * _moveSpeed);
 
         transform.rotation = Quaternion.LookRotation(new Vector3(horizontal, 0, vertical));
         
