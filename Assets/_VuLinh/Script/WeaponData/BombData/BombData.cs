@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "BombData", menuName = "ScriptableObjects/BombData", order = 1)]
 public class BombData : ScriptableObject
 {
-    public List<Sniper> data;
+    public List<Bomb> data;
 }
 
 [System.Serializable]
