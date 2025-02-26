@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseWeapon : MonoBehaviour
+public interface IBullets
 {
-
+    float Bullets {  get; set; }
 }
