@@ -7,14 +7,6 @@ using UnityEngine;
 
 public class SaveManger : MonoBehaviour
 {
-    [SerializeField] private BombData BombData;
-    [SerializeField] private PistolData PistolData;
-    [SerializeField] private RilfeData RilfeData;
-    [SerializeField] private ShotgunData ShotgunData;
-    [SerializeField] private SmgData SmgData;
-    [SerializeField] private SniperData SniperData;
-    [SerializeField] private AgentData AgentData;
-
     public string filePath;
 
     [Button]
@@ -39,7 +31,8 @@ public class SaveManger : MonoBehaviour
             Debug.LogError("Không thể lưu file JSON: " + e.Message);
         }
     }
-    [Button]
+
+
     private void LoadFile()
     {
         {
@@ -52,20 +45,6 @@ public class SaveManger : MonoBehaviour
             try
             {
                 string json = File.ReadAllText(filePath);
-                GameData data = JsonUtility.FromJson<GameData>(json);
-
-                if (data != null)
-                {
-
-                    data.BombsData = BombData.bombData;
-                    data.PistolsData = PistolData.data;
-                    data.RilfesData = RilfeData.rifleData;
-                    data.ShotgunsData = ShotgunData.shotgunData;
-                    data.SmgsData = SmgData.smgData;
-                    data.SnipersData = SniperData.sniperData;
-
-                    Debug.Log("Dữ liệu đã tải từ: " + filePath);
-                }
             }
             catch (System.Exception e)
             {
@@ -73,16 +52,4 @@ public class SaveManger : MonoBehaviour
             }
         }
     }
-}
-
-[System.Serializable]
-public class GameData
-{
-    public List<Bomb> BombsData;
-    public List<Pistol> PistolsData;
-    public List<Rilfe> RilfesData;
-    public List<Shotgun> ShotgunsData;
-    public List<Smg> SmgsData;
-    public List<Sniper> SnipersData;
-    public List<Agent> Agents;
 }
