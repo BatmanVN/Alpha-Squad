@@ -4,23 +4,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "SniperData", menuName = "ScriptableObjects/SniperData", order = 1)]
-public class SniperData : ScriptableObject
+public enum SniperType
 {
-    public List<Sniper> sniperData;
-    private void OnValidate()
-    {
-        foreach (Sniper sniper in sniperData)
-        {
-            sniper.TypeWeapon = TypeWeapon.Sniper;
-        }
-    }
+    ScifiSniper,
+    Barreta,
+    Springfield,
+    Crossbow,
+    SilencerSniper
+}
+
+[CreateAssetMenu(fileName = "SniperAllType", menuName = "ListGuns/SniperAllType", order = 1)]
+public class SniperAllType : ScriptableObject
+{
+    public List<SniperTypeData> Sniperstype;
 }
 
 [System.Serializable]
-public class Sniper : BaseStatsWeapon
+public class SniperTypeData
 {
-    [VerticalGroup("Split/Right")]
-    [LabelWidth(100)]
-    public float AimTime;
+    public SniperType TypeSniper;
+
+    public ScriptableObject SniperTypeSOT;
 }

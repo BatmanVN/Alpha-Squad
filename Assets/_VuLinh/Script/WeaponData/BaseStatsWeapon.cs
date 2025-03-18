@@ -70,7 +70,7 @@ public class BaseStatsWeapon
     [LabelWidth(100)]
     public float Cooldown;
 
-    [VerticalGroup("Split/Right")]
-    [LabelWidth(100)]
-    public GameObject prefab;
+    //[VerticalGroup("Split/Right")]
+    //[LabelWidth(100)]
+    //public GameObject prefab;
 }
