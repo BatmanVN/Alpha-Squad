@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BasePlayer : BaseCharacter
+public class Player : BaseCharacter
 {
     [SerializeField] private VariableJoystick _joystick;
     [SerializeField] private Rigidbody _rb;
@@ -28,15 +28,13 @@ public class BasePlayer : BaseCharacter
         }
 
         _movement.Set(horizontal, 0, vertical);
-        _movement.Normalize(); // Đảm bảo di chuyển có tốc độ nhất quán
+        _movement.Normalize();
         _rb.velocity = new Vector3(_movement.x * _moveSpeed, _rb.velocity.y, _movement.z * _moveSpeed);
 
         transform.rotation = Quaternion.LookRotation(_movement);
-
         _speed = _movement.magnitude;
-        if (_animator.GetFloat("Speed") != _speed)
-        {
-            _animator.SetFloat("Speed", _speed);
-        }
+        _animator.SetFloat("Speed", _speed);
+        _animator.SetBool("Animing", true);
+        
     }
 }
